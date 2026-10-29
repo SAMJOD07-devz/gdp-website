@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-display: "Cinzel", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #d4af37;
+  --color-gold-600: #b89628;
+  --color-navy-950: #050811;
+  --color-navy-900: #0a0f1d;
+  --color-navy-850: #0e1628;
+  --color-navy-800: #131c31;
+  --color-navy-700: #1c2744;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #fef08a 0%, #d4af37 50%, #b89628 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(to right, #d4af37, #fef08a, #b89628) 1;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(14, 22, 40, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(20, 31, 56, 0.85);
+  border-color: rgba(212, 175, 55, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(212, 175, 55, 0.2);
+}
