@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useParams, Link, Navigate, useOutletContext } from 'react-router-dom';
-import { ArrowLeft, Clock, Calendar, ShieldCheck, Share2, Phone, CheckCircle2, MessageCircle } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Clock, Calendar, ShieldCheck, Share2, Phone, CheckCircle2, MessageCircle } from 'lucide-react';
 import { INSIGHTS_ARTICLES } from '../data/insightsData';
 import { FIRM_DETAILS } from '../data/firmData';
 
@@ -134,6 +134,42 @@ export default function InsightDetail() {
               </a>
             </div>
           </header>
+
+          {/* Published Legal Notice / Press Document Viewer (if available) */}
+          {article.noticeImage && (
+            <div className="my-8 rounded-xl bg-white border border-[rgba(14,31,51,0.12)] p-4 sm:p-6 card-shadow">
+              <div className="flex flex-wrap items-center justify-between pb-3 mb-3 border-b border-[rgba(14,31,51,0.08)] gap-2">
+                <div className="flex items-center space-x-2">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-[#A8803A] bg-[#EEF3F8] px-2.5 py-0.5 rounded border border-[rgba(14,31,51,0.08)]">
+                    Official Press Record
+                  </span>
+                  {article.newspaper && (
+                    <span className="text-xs text-[#738499]">{article.newspaper}</span>
+                  )}
+                </div>
+                <a
+                  href={article.noticeImage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-[#0E1F33] hover:text-[#A8803A] font-medium flex items-center"
+                >
+                  <span>View Original Image</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 ml-1" />
+                </a>
+              </div>
+
+              <div className="rounded-lg overflow-hidden border border-[rgba(14,31,51,0.10)] bg-[#EEF3F8] max-h-[640px] flex items-center justify-center p-2">
+                <img
+                  src={article.noticeImage}
+                  alt={article.title}
+                  className="w-full h-auto max-h-[620px] object-contain mx-auto rounded shadow-xs"
+                />
+              </div>
+              <p className="text-[11px] text-center text-[#738499] mt-3">
+                Authentic published legal verdict and press report concerning court proceedings represented by GD Pandya Associates.
+              </p>
+            </div>
+          )}
 
           {/* Key Takeaways Box */}
           <div className="my-10 rounded-xl bg-white border border-[rgba(14,31,51,0.12)] p-6 sm:p-7 card-shadow">

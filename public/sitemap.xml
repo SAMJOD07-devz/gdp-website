@@ -35,12 +35,16 @@
   </url>
   <url>
     <loc>https://advocate-pandya.com/team</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://advocate-pandya.com/assets/team/dinesh-pandya.webp</image:loc>
+      <image:title>Adv. Dinesh B. Pandya - Senior Advocate &amp; Founding Counsel</image:title>
+    </image:image>
     <image:image>
       <image:loc>https://advocate-pandya.com/assets/team/gaurav-pandya.webp</image:loc>
-      <image:title>Adv. Gaurav D. Pandya - Founder &amp; Principal Advocate</image:title>
+      <image:title>Adv. Gaurav D. Pandya - Managing Principal Advocate</image:title>
     </image:image>
     <image:image>
       <image:loc>https://advocate-pandya.com/assets/team/falguni-pandya.webp</image:loc>
@@ -74,6 +78,36 @@
     <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advocate-pandya.com/insights/gujarat-high-court-digjam-mill-land-acquisition-verdict</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://advocate-pandya.com/assets/notices/nobat-digjam-land-verdict.webp</image:loc>
+      <image:title>Gujarat High Court Digjam Mill Land Acquisition Landmark Verdict</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://advocate-pandya.com/insights/court-rules-jada-demolition-illegal-orders-compensation</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://advocate-pandya.com/assets/notices/sandesh-jada-demolition-case.webp</image:loc>
+      <image:title>Jamnagar District Court JADA Demolition Compensation Verdict</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://advocate-pandya.com/insights/cheque-bounce-criminal-appeals-dismissed-sessions-court</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://advocate-pandya.com/assets/notices/cheque-bounce-appellate-order.webp</image:loc>
+      <image:title>Jamnagar Appellate Court Cheque Bounce Appeal Dismissal Order</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://advocate-pandya.com/insights/cheque-bounce-legal-notice-section-138</loc>

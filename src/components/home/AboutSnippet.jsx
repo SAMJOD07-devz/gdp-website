@@ -36,8 +36,8 @@ export default function AboutSnippet() {
             <div className="bg-white p-3 rounded-xl border border-[rgba(14,31,51,0.12)] card-shadow">
               <div className="rounded-lg overflow-hidden border border-[rgba(14,31,51,0.08)] bg-slate-50">
                 <img
-                  src="/assets/business-card.webp"
-                  alt="Official visiting card of Advocate Gaurav D. Pandya — Government of India Notary, Registered Trademark Attorney, GD Pandya Associates, Jamnagar"
+                  src="/assets/dinesh-gaurav-cards.webp"
+                  alt="Official practice cards of Senior Advocate Dinesh B. Pandya and Advocate Gaurav D. Pandya — GD Pandya Associates, Jamnagar"
                   className="w-full h-auto object-cover"
                   loading="lazy"
                   width="800"
@@ -45,7 +45,7 @@ export default function AboutSnippet() {
               </div>
               <div className="pt-3 pb-1 px-2 text-center border-t border-[rgba(14,31,51,0.06)] mt-2">
                 <p className="text-xs text-[#738499] font-medium">
-                  Official Verification &amp; Notary Card · Government of India
+                  Official Verification Cards · Adv. Dinesh B. Pandya &amp; Adv. Gaurav D. Pandya
                 </p>
               </div>
             </div>

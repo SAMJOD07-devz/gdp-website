@@ -4,8 +4,8 @@ import { ArrowRight, ArrowUpRight, Phone } from 'lucide-react';
 import { TEAM_MEMBERS, FIRM_DETAILS } from '../../data/firmData';
 
 export default function TeamShowcase({ onOpenConsultation }) {
-  const principal = TEAM_MEMBERS.find((m) => m.featured);
-  const associates = TEAM_MEMBERS.filter((m) => !m.featured);
+  const seniorLawyers = TEAM_MEMBERS.filter((m) => m.isSenior || m.featured);
+  const associates = TEAM_MEMBERS.filter((m) => !m.isSenior && !m.featured);
 
   return (
     <section className="py-16 sm:py-20 lg:py-28 bg-[#FFFFFF] border-b border-[rgba(14,31,51,0.08)]">
@@ -15,11 +15,14 @@ export default function TeamShowcase({ onOpenConsultation }) {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 pb-6 border-b border-[rgba(14,31,51,0.10)]">
           <div className="max-w-2xl space-y-2">
             <p className="text-xs font-semibold tracking-wider uppercase text-[#A8803A]">
-              Counsel &amp; Associates
+              Counsel &amp; Associates · Generational Practice
             </p>
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#0E1F33] tracking-tight">
-              Courtroom advocates &amp; legal counsel.
+              Senior advocates &amp; legal counsel.
             </h2>
+            <p className="text-xs sm:text-sm text-[#4A5B70] pt-1">
+              Anchored by father-and-son advocates Adv. Dinesh B. Pandya and Adv. Gaurav D. Pandya, delivering comprehensive trial advocacy and advisory across Gujarat.
+            </p>
           </div>
           
           <div className="mt-4 md:mt-0">
@@ -33,88 +36,106 @@ export default function TeamShowcase({ onOpenConsultation }) {
           </div>
         </div>
 
-        {/* Founder Spotlight Card */}
-        {principal && (
-          <div className="mb-14 sm:mb-16 rounded-xl bg-[#EEF3F8] border border-[rgba(14,31,51,0.10)] p-5 sm:p-8 lg:p-10 card-shadow">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center">
-              
-              {/* Rectangular Photo Frame */}
-              <div className="lg:col-span-4">
-                <div className="relative mx-auto max-w-xs lg:max-w-none">
-                  <div className="aspect-[4/5] rounded-lg overflow-hidden border border-[rgba(14,31,51,0.12)] bg-white card-shadow">
-                    <img
-                      src={principal.image}
-                      alt={`${principal.name} - ${principal.role}, GD Pandya Associates Jamnagar`}
-                      className="w-full h-full object-cover object-top filter contrast-[1.02]"
-                      loading="lazy"
-                      width="600"
-                      height="800"
-                    />
-                  </div>
-                  <div className="mt-2.5 text-center">
-                    <span className="inline-block px-3 py-1 rounded-full text-[11px] font-medium bg-white text-[#0E1F33] border border-[rgba(14,31,51,0.10)]">
-                      Enrolled 2007 · 18+ Years Bar Standing
-                    </span>
-                  </div>
-                </div>
-              </div>
+        {/* Senior Advocates Showcase (Father & Son Duo) */}
+        <div className="mb-14 sm:mb-20 space-y-8">
+          <div className="flex items-center space-x-2 pb-2 border-b border-[rgba(14,31,51,0.08)]">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#A8803A]">
+              Senior Leadership &amp; Founding Counsel
+            </span>
+          </div>
 
-              {/* Founder Narrative */}
-              <div className="lg:col-span-8 space-y-4 sm:space-y-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+            {seniorLawyers.map((counsel) => (
+              <div
+                key={counsel.id}
+                className="rounded-xl bg-[#EEF3F8] border border-[rgba(14,31,51,0.10)] p-6 sm:p-8 card-shadow flex flex-col justify-between"
+              >
                 <div>
-                  <span className="text-xs uppercase tracking-wider font-semibold text-[#A8803A]">
-                    Founder &amp; Principal Advocate
-                  </span>
-                  <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-[#0E1F33] mt-1">
-                    {principal.name}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#4A5B70] mt-1">
-                    {principal.qualifications} · {principal.credentials}
-                  </p>
-                  <p className="text-xs text-[#738499] mt-0.5">
-                    {principal.enrollment}
-                  </p>
-                </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 items-start">
+                    
+                    {/* Portrait Photo Frame */}
+                    <div className="sm:col-span-5">
+                      <div className="aspect-[4/5] rounded-lg overflow-hidden border border-[rgba(14,31,51,0.12)] bg-white card-shadow">
+                        <img
+                          src={counsel.image}
+                          alt={`${counsel.name} - ${counsel.role}, GD Pandya Associates Jamnagar`}
+                          className="w-full h-full object-cover object-top filter contrast-[1.02]"
+                          loading="lazy"
+                          width="600"
+                          height="800"
+                        />
+                      </div>
+                      <div className="mt-2 text-center">
+                        <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-white text-[#0E1F33] border border-[rgba(14,31,51,0.10)]">
+                          {counsel.experience}
+                        </span>
+                      </div>
+                    </div>
 
-                <p className="text-xs sm:text-base text-[#4A5B70] leading-relaxed">
-                  {principal.bio}
-                </p>
+                    {/* Counsel Header Info */}
+                    <div className="sm:col-span-7 space-y-1.5">
+                      <div className="flex items-center space-x-2">
+                        <span className="text-[10px] uppercase tracking-wider font-semibold text-[#A8803A] bg-white px-2 py-0.5 rounded border border-[rgba(14,31,51,0.08)]">
+                          {counsel.relation}
+                        </span>
+                      </div>
 
-                {/* Practice focus pills */}
-                <div className="pt-1 flex flex-wrap gap-1.5 sm:gap-2">
-                  {principal.specialties.map((spec, i) => (
-                    <span
-                      key={i}
-                      className="px-2.5 py-1 rounded-md text-[11px] sm:text-xs font-medium bg-white text-[#0E1F33] border border-[rgba(14,31,51,0.10)] shadow-xs"
-                    >
-                      {spec}
-                    </span>
-                  ))}
+                      <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#0E1F33]">
+                        {counsel.name}
+                      </h3>
+                      <p className="text-xs text-[#0E1F33] font-medium">
+                        {counsel.role}
+                      </p>
+                      <p className="text-xs text-[#4A5B70]">
+                        {counsel.qualifications} · {counsel.credentials}
+                      </p>
+                      <p className="text-[11px] text-[#738499]">
+                        {counsel.enrollment}
+                      </p>
+                    </div>
+
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-[#4A5B70] leading-relaxed pt-4">
+                    {counsel.bio}
+                  </p>
+
+                  {/* Practice pills */}
+                  <div className="pt-3 flex flex-wrap gap-1.5">
+                    {counsel.specialties.map((spec, i) => (
+                      <span
+                        key={i}
+                        className="px-2 py-0.5 rounded text-[10px] font-medium bg-white text-[#0E1F33] border border-[rgba(14,31,51,0.08)]"
+                      >
+                        {spec}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Actions */}
-                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                <div className="pt-5 mt-4 border-t border-[rgba(14,31,51,0.08)] flex flex-wrap items-center gap-2.5">
                   <button
                     onClick={onOpenConsultation}
-                    className="inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold text-white bg-[#0E1F33] hover:bg-[#162C47] rounded-lg shadow-sm transition-colors"
+                    className="inline-flex items-center justify-center px-4 py-2 text-xs font-semibold text-white bg-[#0E1F33] hover:bg-[#162C47] rounded-lg shadow-sm transition-colors"
                   >
-                    <span>Consult Advocate Pandya</span>
+                    <span>Consult {counsel.name.split(' ')[1]}</span>
                     <ArrowUpRight className="w-3.5 h-3.5 ml-1 text-slate-300" strokeWidth={1.5} />
                   </button>
 
                   <a
-                    href={FIRM_DETAILS.social.phone}
-                    className="inline-flex items-center justify-center text-xs font-medium text-[#0E1F33] bg-white border border-[rgba(14,31,51,0.12)] px-4 py-2.5 rounded-lg hover:bg-slate-50 transition-colors"
+                    href={`tel:${counsel.phone.replace(/[\s-]/g, '')}`}
+                    className="inline-flex items-center justify-center text-xs font-medium text-[#0E1F33] bg-white border border-[rgba(14,31,51,0.12)] px-3.5 py-2 rounded-lg hover:bg-slate-50 transition-colors"
                   >
-                    <Phone className="w-3.5 h-3.5 mr-1.5 text-[#A8803A]" strokeWidth={1.5} />
-                    <span>Direct Call</span>
+                    <Phone className="w-3.5 h-3.5 mr-1 text-[#A8803A]" strokeWidth={1.5} />
+                    <span>{counsel.phone}</span>
                   </a>
                 </div>
-              </div>
 
-            </div>
+              </div>
+            ))}
           </div>
-        )}
+        </div>
 
         {/* Associate Counsel Grid */}
         <div>

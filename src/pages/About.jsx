@@ -95,15 +95,14 @@ export default function About() {
             {/* Official Visiting Card Document Record */}
             <div className="rounded-xl overflow-hidden border border-[rgba(14,31,51,0.12)] bg-white card-shadow p-3">
               <img
-                src="/assets/business-card.webp"
-                alt="Government of India Notary Registration Visiting Card - Advocate Gaurav D. Pandya, Jamnagar"
+                src="/assets/dinesh-gaurav-cards.webp"
+                alt="Official Practice Cards - Senior Advocate Dinesh B. Pandya & Advocate Gaurav D. Pandya, Jamnagar"
                 className="w-full h-auto rounded-lg border border-[rgba(14,31,51,0.06)]"
                 loading="lazy"
                 width="800"
-                height="496"
               />
               <p className="text-[11px] text-center text-[#738499] mt-2">
-                Official Government of India Notary Registration Card
+                Official Practice Credentials · Adv. Dinesh B. Pandya &amp; Adv. Gaurav D. Pandya
               </p>
             </div>
           </div>

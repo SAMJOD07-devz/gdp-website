@@ -21,6 +21,7 @@ const imageConfigs = [
   { src: 'business-card.jpeg',     dest: 'business-card.webp',      width: 800,  height: null, quality: 85 },
   { src: 'office-building.jpeg',   dest: 'office-building.webp',    width: 800,  height: null, quality: 82 },
   // Team photos
+  { src: 'team/dinesh-pandya.jpeg',        dest: 'team/dinesh-pandya.webp',        width: 600, height: 800,  quality: 85 },
   { src: 'team/gaurav-pandya-office.jpeg', dest: 'team/gaurav-pandya-office.webp', width: 900, height: null, quality: 85 },
   { src: 'team/gaurav-pandya.jpeg',        dest: 'team/gaurav-pandya.webp',        width: 600, height: 800,  quality: 85 },
   { src: 'team/falguni-pandya.jpg',        dest: 'team/falguni-pandya.webp',       width: 600, height: 800,  quality: 82 },

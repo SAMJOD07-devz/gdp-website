@@ -1,9 +1,132 @@
 /**
- * Legal Insights & Practice Guides for GD Pandya Associates
- * High-value informational content targeting organic search intent across Gujarat.
+ * Legal Insights, Landmark Court Verdicts & Public Notices for GD Pandya Associates
+ * Informational content & case publications across Jamnagar and Gujarat.
  */
 
 export const INSIGHTS_ARTICLES = [
+  {
+    slug: "gujarat-high-court-digjam-mill-land-acquisition-verdict",
+    title: "Gujarat High Court Landmark Verdict: 2.5-Decade Digjam Mill Land Acquisition Decided in Favor of Landowners",
+    shortTitle: "Digjam Mill Land Acquisition Verdict (Gujarat HC)",
+    category: "Landmark Verdicts & Press",
+    newspaper: "Nobat Daily (Breaking News)",
+    publishDate: "2025-12-02",
+    readTime: "5 min read",
+    noticeImage: "/assets/notices/nobat-digjam-land-verdict.webp",
+    author: {
+      name: "Adv. Gaurav D. Pandya",
+      title: "Principal Advocate & High Court Counsel",
+      image: "/assets/team/gaurav-pandya.webp"
+    },
+    excerpt: "In a historic judgment published in Nobat Daily, the Gujarat High Court held that the acquisition of over 2 lakh square feet of prime land originally acquired for Digjam Mill was illegal after industry closure, ordering the Collector to restore possession to the rightful owners.",
+    metaDescription: "Read the landmark Gujarat High Court judgment on Digjam Mill Jamnagar land acquisition. 2 lakh+ sq. ft. land ordered restored to original owners after 25 years of litigation.",
+    keywords: ["Digjam Mill Jamnagar land case", "Gujarat High Court land acquisition verdict", "Jamnagar property lawyer", "Advocate Gaurav Pandya cases", "Nobat Daily Jamnagar news"],
+    content: [
+      {
+        heading: "1. The 25-Year Legal Battle Over Digjam Mill Land",
+        body: `A monumental judgment concerning prime land in Jamnagar was delivered by the High Court of Gujarat after more than two and a half decades of relentless legal litigation. Decades ago, massive parcels of land measuring over 2,00,000 square feet were compulsorily acquired for the industrial operations of Digjam Mill.
+
+Following the eventual cessation of operations by the company, the statutory purpose of the public land acquisition ceased to exist. When the state authorities failed to restore the title, the rightful landowners instituted extensive legal proceedings before the High Court.`
+      },
+      {
+        heading: "2. The High Court's Decisive Order to District Collector",
+        body: `Analyzing precedent rulings from the Supreme Court of India on eminent domain and the doctrine of public purpose, the Gujarat High Court held the continuation of government possession illegal.
+
+The Court issued direct orders to the District Collector of Jamnagar to hand over physical possession of more than 2 Lakh square feet of high-value land back to the rightful owners (M/s. Walker Anjaria & Sons Pvt. Ltd.), bringing justice after a protracted 25-year fight.`
+      },
+      {
+        heading: "3. Landmark Precedent for Property Rights in Gujarat",
+        body: `This ruling stands as an authoritative precedent across Saurashtra for agricultural and industrial land acquisitions where the original statutory intent has lapsed, reaffirming constitutional protections under Article 300-A of the Constitution of India.`
+      }
+    ],
+    takeaways: [
+      "Land acquired for a specific public purpose cannot be retained indefinitely once the enterprise shuts down.",
+      "Landowners possess a constitutional right under Article 300-A to challenge lapsed acquisitions before the High Court.",
+      "High Court issued binding mandamus to the District Collector for physical restoration of possession."
+    ]
+  },
+  {
+    slug: "court-rules-jada-demolition-illegal-orders-compensation",
+    title: "Jamnagar Court Rules JADA Warehouse Demolition Illegal; Orders ₹8.28 Lakh Compensation with Interest",
+    shortTitle: "JADA Illegal Demolition Compensation Order",
+    category: "Landmark Verdicts & Press",
+    newspaper: "Sandesh (14 December 2025)",
+    publishDate: "2025-12-14",
+    readTime: "5 min read",
+    noticeImage: "/assets/notices/sandesh-jada-demolition-case.webp",
+    author: {
+      name: "Adv. Gaurav D. Pandya",
+      title: "Principal Advocate & Trial Counsel",
+      image: "/assets/team/gaurav-pandya.webp"
+    },
+    excerpt: "The Jamnagar District Court held the demolition of an 88,676 sq. ft. commercial transport godown by the Jamnagar Area Development Authority (JADA) illegal, ordering ₹8.28 Lakh compensation with 6% interest dating back to 1998, holding former TPO personally liable.",
+    metaDescription: "Jamnagar District Court landmark order holding JADA demolition of 88,676 sq ft commercial warehouse in Dhinchda illegal, ordering compensation of ₹8.28 Lakh with interest since 1998.",
+    keywords: ["JADA demolition Jamnagar case", "Jamnagar court compensation order", "Town planning officer illegal demolition", "Dhinchda warehouse case Jamnagar", "Sandesh newspaper Jamnagar law"],
+    content: [
+      {
+        heading: "1. The Background: Approved Construction Demolished in Dhinchda",
+        body: `In the Dhinchda area of Jamnagar, commercial plot owners converted land into non-agricultural (NA) use with formal approval from the District Panchayat for constructing a 88,676 square feet private transport godown.
+
+Despite charges being deposited with the Jamnagar Area Development Authority (JADA) and deemed permission operating within the statutory 3-month timeline, authority officials illegally demolished the built warehouse without due process.`
+      },
+      {
+        heading: "2. The Court's Ruling on Official Overreach & Damages",
+        body: `The legal heirs of the affected business family instituted a civil damage suit before the Jamnagar District Court against the former Chairman/Collector, Town Planning Officer (TPO), and Deputy SP.
+
+In a scathing verdict reported by Sandesh newspaper, the Court declared the demolition completely illegal and ordered JADA to pay ₹8.28 Lakh damages with 6% interest per annum calculated from the original date of the 1998 lawsuit, directing JADA to recover the amount from the personal liability of the former Town Planning Officer.`
+      },
+      {
+        heading: "3. Legal Protection Against Municipal & Urban Authority Excesses",
+        body: `This ruling sends a clear message across Gujarat: development authorities cannot ride roughshod over citizen rights or ignore statutory deemed approvals. Property owners subjected to arbitrary demolitions have robust legal recourse for financial restitution and compensation.`
+      }
+    ],
+    takeaways: [
+      "Municipal authorities and development bodies (JADA/JMC) are strictly bound by the Gujarat Town Planning & Urban Development Act.",
+      "Deemed permissions under statutory time limits are legally enforceable in a court of law.",
+      "Courts can fix personal financial liability on public officials who act in excess of statutory jurisdiction."
+    ]
+  },
+  {
+    slug: "cheque-bounce-criminal-appeals-dismissed-sessions-court",
+    title: "Jamnagar Appellate Court Dismisses 4 Criminal Appeals; Confirms ₹9 Lakh Recovery and Jail Term",
+    shortTitle: "Appellate Court Rejects 4 Cheque Bounce Appeals",
+    category: "Landmark Verdicts & Press",
+    newspaper: "Court Judgment Record",
+    publishDate: "2025-12-20",
+    readTime: "4 min read",
+    noticeImage: "/assets/notices/cheque-bounce-appellate-order.webp",
+    author: {
+      name: "Adv. Gaurav D. Pandya",
+      title: "Principal Advocate & Bank Panel Counsel",
+      image: "/assets/team/gaurav-pandya.webp"
+    },
+    excerpt: "The Sessions Appellate Court in Jamnagar rejected all 4 criminal appeals filed by an industrial debtor who claimed his signed cheques were 'lost'. The court upheld the Trial Court's 6 months imprisonment and ordered ₹9 Lakh repayment.",
+    metaDescription: "Appellate Sessions Court Jamnagar dismisses 4 criminal appeals in Section 138 NI Act cheque bounce case. ₹9 Lakh recovery and 6 months jail term confirmed for complainant.",
+    keywords: ["Cheque bounce appeal Jamnagar", "Section 138 NI Act court order", "Lost cheque defense rejected", "Jamnagar trial court cheque bounce", "Criminal appeals Saurashtra"],
+    content: [
+      {
+        heading: "1. The Factual Matrix of the Dispute",
+        body: `A factory proprietor in Jamnagar GIDC borrowed funds under commercial business relations from a complainant and issued four separate cheques in repayment. When presented, all four cheques were returned dishonored by the bank without credit.
+
+The complainant, through GD Pandya Associates, instituted four criminal complaints under Section 138 of the Negotiable Instruments Act before the Trial Court.`
+      },
+      {
+        heading: "2. The Defense of 'Lost Signed Cheques' Rejected",
+        body: `The accused factory proprietor attempted to evade liability by asserting that his signed blank cheques had been misplaced and misused. 
+
+The Trial Court dismissed this standard defense, sentenced the accused to 6 months imprisonment per case, and ordered ₹9 Lakh in total payment. On appeal before the Appellate Sessions Court in 2022, the appellate judge reaffirmed the Trial Court order in its entirety, finding the debtor's appeal devoid of merit.`
+      },
+      {
+        heading: "3. Swift Recovery Through Vigorous Court Advocacy",
+        body: `Under the strict statutory presumptions of Section 118 and 139 of the Negotiable Instruments Act, the burden rests squarely on the drawer to rebut that the cheque was issued for legally enforceable debt. Mere oral claims of loss do not hold up against seasoned trial cross-examination.`
+      }
+    ],
+    takeaways: [
+      "Signing a cheque creates a powerful legal presumption under Section 139 NI Act.",
+      "Appellate courts in Gujarat consistently reject unsubstantiated 'lost cheque' claims without formal police complaints.",
+      "Successful prosecutions yield both penal imprisonment and full monetary compensation for the complainant."
+    ]
+  },
   {
     slug: "property-title-verification-guide-jamnagar",
     title: "The Complete Guide to Property Title Verification & Search Reports in Jamnagar, Gujarat",
@@ -145,4 +268,3 @@ For an offense to be made out:
     ]
   }
 ];
-
