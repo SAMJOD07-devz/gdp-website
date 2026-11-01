@@ -24,7 +24,6 @@ const imageConfigs = [
   { src: 'team/gaurav-pandya-office.jpeg', dest: 'team/gaurav-pandya-office.webp', width: 900, height: null, quality: 85 },
   { src: 'team/gaurav-pandya.jpeg',        dest: 'team/gaurav-pandya.webp',        width: 600, height: 800,  quality: 85 },
   { src: 'team/falguni-pandya.jpg',        dest: 'team/falguni-pandya.webp',       width: 600, height: 800,  quality: 82 },
-  { src: 'team/dhruv-ajudiya.png',         dest: 'team/dhruv-ajudiya.webp',        width: 600, height: 800,  quality: 82 },
   { src: 'team/drashti-abhangi.jpg',       dest: 'team/drashti-abhangi.webp',      width: 600, height: 800,  quality: 82 },
   { src: 'team/khyati-bhatt.jpg',          dest: 'team/khyati-bhatt.webp',         width: 600, height: 800,  quality: 82 },
   { src: 'team/alifiya-vaghela.jpg',       dest: 'team/alifiya-vaghela.webp',      width: 600, height: 800,  quality: 82 },

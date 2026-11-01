@@ -162,20 +162,6 @@ export const TEAM_MEMBERS = [
     email: "advocate_pandya@hotmail.com"
   },
   {
-    id: "dhruv-ajudiya",
-    name: "Adv. Dhruv Ajudiya",
-    role: "Legal Associate",
-    qualifications: "B.Com, L.L.B.",
-    credentials: "High Court & District Court Advocate",
-    enrollment: "Bar Council of Gujarat",
-    image: "/assets/team/dhruv-ajudiya.webp",
-    featured: false,
-    bio: "Key litigation associate focusing on criminal trials, bail applications, NI Act Section 138 cheque bounce proceedings, and real estate registry documentation.",
-    specialties: ["Criminal Trial Defense", "Cheque Bounce Matters", "Title Search", "Contract Drafting"],
-    phone: "+91 98985 98184",
-    email: "advocate_pandya@hotmail.com"
-  },
-  {
     id: "drashti-abhangi",
     name: "Adv. Drashti Abhangi",
     role: "Legal Associate",
