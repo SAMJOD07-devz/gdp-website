@@ -165,7 +165,7 @@ export default function TeamShowcase({ onOpenConsultation }) {
                 <div className="p-4 pt-0">
                   <div className="pt-2 border-t border-[rgba(14,31,51,0.06)]">
                     <span className="text-[11px] text-[#0E1F33] font-medium block">
-                      {member.focus}
+                      {member.focus || (member.specialties && member.specialties[0]) || member.credentials}
                     </span>
                   </div>
                 </div>

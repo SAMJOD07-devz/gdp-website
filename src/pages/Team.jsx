@@ -157,7 +157,7 @@ export default function Team() {
                       {member.qualifications}
                     </p>
                     <p className="text-xs text-[#0E1F33] font-medium pt-1">
-                      {member.focus}
+                      {member.focus || (member.specialties && member.specialties[0]) || member.credentials}
                     </p>
                   </div>
                 </div>
