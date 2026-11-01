@@ -12,7 +12,7 @@ export default function TopBar() {
             className="flex items-center space-x-1.5 hover:text-[#0E1F33] transition-colors"
           >
             <Phone className="w-3.5 h-3.5 text-[#A8803A]" strokeWidth={1.5} />
-            <span className="font-medium text-[#0E1F33]">{FIRM_DETAILS.phone}</span>
+            <span className="font-semibold text-[#0E1F33]">{FIRM_DETAILS.phone}</span>
           </a>
           
           <a 
@@ -25,7 +25,7 @@ export default function TopBar() {
 
           <div className="flex items-center space-x-1.5">
             <MapPin className="w-3.5 h-3.5 text-[#A8803A]" strokeWidth={1.5} />
-            <span>Madhav Square, Limda Lane, Jamnagar</span>
+            <span>Madhav Square, Jamnagar - 361001</span>
           </div>
         </div>
 

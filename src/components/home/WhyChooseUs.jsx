@@ -1,26 +1,62 @@
 import React, { useState } from 'react';
-import { ChevronDown, Landmark, ShieldCheck, ArrowUpRight } from 'lucide-react';
+import { ChevronDown, Landmark, ShieldCheck, ArrowUpRight, Layers, Compass, CheckCircle } from 'lucide-react';
 import { INSTITUTIONAL_CLIENTS } from '../../data/firmData';
 
 export default function WhyChooseUs({ onOpenConsultation }) {
   const [lang, setLang] = useState('en'); // 'en' | 'gu' | 'hi'
   const [openFaq, setOpenFaq] = useState(0);
 
-  const steps = [
+  // 5-Tier Pyramid Legal Process
+  const pyramidSteps = [
     {
-      num: "01",
-      title: "Initial Brief & Document Scrutiny",
-      desc: "Confidential examination of your court notices, land revenue records, contracts, or FIR/charge-sheets at our Jamnagar chambers or via secure digital brief."
+      level: 5,
+      tier: "Peak",
+      title: "05. Result Orientation",
+      subtitle: "Decree, Enforcement & Substantive Relief",
+      desc: "Delivering conclusive, enforceable results through decree execution, appellate protection, or negotiated settlement—securing our client's rights without unnecessary delays.",
+      widthClass: "max-w-md",
+      bgClass: "bg-[#0E1F33] text-white border-[#A8803A]",
+      numBadge: "bg-[#A8803A] text-white"
     },
     {
-      num: "02",
-      title: "Strategic Advisory & Remedy Analysis",
-      desc: "Transparent counsel on statutory remedies, limitation periods, expected timelines, and realistic dispute outcomes before initiating legal steps."
+      level: 4,
+      tier: "Tier 4",
+      title: "04. Court Appearance",
+      subtitle: "Trial Representation & Advocacy",
+      desc: "Assertive courtroom representation before the District & Sessions Courts of Jamnagar and other cities across Gujarat, backed by sharp oral arguments and rigorous cross-examination.",
+      widthClass: "max-w-xl",
+      bgClass: "bg-white text-[#0E1F33] border-[rgba(14,31,51,0.18)] shadow-sm",
+      numBadge: "bg-[#EEF3F8] text-[#0E1F33] border border-[rgba(14,31,51,0.10)]"
     },
     {
-      num: "03",
-      title: "Pleadings & Court Advocacy",
-      desc: "Meticulous drafting of petitions, trademark filings, or written statements, accompanied by assertive trial representation before District Courts or the High Court."
+      level: 3,
+      tier: "Tier 3",
+      title: "03. Strategy Formulation",
+      subtitle: "Watertight Pleadings & Defense Matrix",
+      desc: "Structuring bulletproof legal notices, written statements, plaint drafts, or trademark replies fortified with relevant Supreme Court and High Court precedents.",
+      widthClass: "max-w-2xl",
+      bgClass: "bg-white text-[#0E1F33] border-[rgba(14,31,51,0.14)] shadow-xs",
+      numBadge: "bg-[#EEF3F8] text-[#0E1F33] border border-[rgba(14,31,51,0.10)]"
+    },
+    {
+      level: 2,
+      tier: "Tier 2",
+      title: "02. Initial Assessment",
+      subtitle: "Jurisdiction & Statutory Evaluation",
+      desc: "In-depth legal feasibility evaluation, examining limitation periods, applicable acts (CPC, CrPC, NI Act, Trade Marks Act), and mapping all strategic remedies.",
+      widthClass: "max-w-3xl",
+      bgClass: "bg-white text-[#0E1F33] border-[rgba(14,31,51,0.12)] shadow-xs",
+      numBadge: "bg-[#EEF3F8] text-[#0E1F33] border border-[rgba(14,31,51,0.10)]"
+    },
+    {
+      level: 1,
+      tier: "Foundation",
+      title: "01. Basics",
+      subtitle: "Fact-Finding & Document Scrutiny",
+      desc: "Comprehensive review of the fundamental facts, revenue records (7/12, 8-A, Index-II), contracts, court summons, or police papers during confidential intake.",
+      widthClass: "max-w-4xl",
+      bgClass: "bg-[#F0F4F8] text-[#0E1F33] border-[rgba(14,31,51,0.12)]",
+      numBadge: "bg-[#0E1F33] text-white"
     }
   ];
 
@@ -32,7 +68,7 @@ export default function WhyChooseUs({ onOpenConsultation }) {
         hi: "प्रारंभिक संपत्ति या मुकदमेबाजी परामर्श के लिए कौन से दस्तावेज लाने चाहिए?"
       },
       a: {
-        en: "Bring all primary documents related to your matter: title deeds, 7/12 & 8-A revenue extracts, registered agreements, any court summons or legal notices received, and relevant correspondence. We will review them in detail during the session.",
+        en: "Bring all primary documents related to your matter: title deeds, 7/12 & 8-A revenue extracts, registered agreements, any court summons or legal notices received, and relevant correspondence. We review them thoroughly during the initial session.",
         gu: "તમારી બાબત સાથે સંબંધિત તમામ પ્રાથમિક દસ્તાવેજો લાવો: દસ્તાવેજ, ૭/૧૨ અને ૮-અ ના ઉતારા, રજીસ્ટર્ડ કરારો, કોર્ટ સમન્સ અથવા કાનૂની નોટિસ.",
         hi: "अपने मामले से संबंधित सभी प्राथमिक दस्तावेज लाएं: स्वामित्व विलेख, राजस्व नकल (7/12, 8-A), पंजीकृत अनुबंध, कोर्ट समन या प्राप्त कानूनी नोटिस।"
       }
@@ -51,14 +87,14 @@ export default function WhyChooseUs({ onOpenConsultation }) {
     },
     {
       q: {
-        en: "Can the firm represent matters before the Gujarat High Court in Ahmedabad?",
-        gu: "શું પેઢી અમદાવાદ ખાતે ગુજરાત હાઇકોર્ટ સમક્ષ બાબતોનું પ્રતિનિધિત્વ કરી શકે છે?",
-        hi: "क्या फर्म अहमदाबाद में गुजरात उच्च न्यायालय के समक्ष मामलों का प्रतिनिधित्व कर सकती है?"
+        en: "Which courts and cities does GD PANDYA ASSOCIATES represent?",
+        gu: "GD PANDYA ASSOCIATES કઈ અદાલતો અને શહેરોમાં કેસો લડે છે?",
+        hi: "GD PANDYA ASSOCIATES किन न्यायालयों और शहरों में प्रतिनिधित्व करती है?"
       },
       a: {
-        en: "Yes. Adv. Gaurav Pandya and associate counsel regularly draft, file, and argue Special Civil Applications, Criminal Appeals, Revisions, and Bail Petitions before the High Court of Gujarat, alongside active trial advocacy at the Jamnagar District Court.",
-        gu: "હા. એડવોકેટ ગૌરવ પંડ્યા અને સહયોગીઓ જામનગર જિલ્લા અદાલત તેમજ ગુજરાત હાઇકોર્ટ સમક્ષ નિયમિતપણે કાનૂની રજૂઆત કરે છે.",
-        hi: "हाँ। एडवोकेट गौरव पंड्या और सहयोगी जामनगर जिला न्यायालय के साथ-साथ गुजरात उच्च न्यायालय में नियमित रूप से प्रतिनिधित्व करते हैं।"
+        en: "GD PANDYA ASSOCIATES regularly represents clients before the District & Sessions Courts of Jamnagar and other cities across Gujarat, handling trials, civil appeals, criminal matters, and banking recovery proceedings.",
+        gu: "GD PANDYA ASSOCIATES જામનગર અને ગુજરાતના અન્ય શહેરોની જિલ્લા અને સેશન્સ અદાલતો સમક્ષ નિયમિતપણે કેસોનું પ્રતિનિધિત્વ કરે છે.",
+        hi: "GD PANDYA ASSOCIATES जामनगर और गुजरात के अन्य शहरों के जिला एवं सत्र न्यायालयों में मुकदमों का नियमित प्रतिनिधित्व करती है।"
       }
     },
     {
@@ -79,42 +115,55 @@ export default function WhyChooseUs({ onOpenConsultation }) {
     <section className="py-20 lg:py-28 bg-[#F7FAFC] border-b border-[rgba(14,31,51,0.08)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
         
-        {/* Part 1: How a Consultation Works (3 Calm Numbered Steps) */}
+        {/* Part 1: How a Legal Matter Proceeds — Elegant Pyramid Structure */}
         <div>
-          <div className="max-w-3xl mb-14 space-y-2">
+          <div className="max-w-3xl mb-12 space-y-2">
             <p className="text-xs font-semibold tracking-wider uppercase text-[#A8803A]">
-              Procedure &amp; Consultation
+              Strategic Legal Methodology
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#0E1F33] tracking-tight">
-              How a legal consultation works.
+              How a legal matter is resolved.
             </h2>
             <p className="text-base text-[#4A5B70] pt-1">
-              A transparent, structured process ensuring immediate clarity on your rights and remedies.
+              From foundational facts to conclusive results — a 5-tier pyramid framework guaranteeing rigorous preparation and courtroom mastery.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-            {/* Subtle connecting hairline across steps on desktop */}
-            <div className="hidden md:block absolute top-7 left-12 right-12 h-[1px] bg-[rgba(14,31,51,0.12)] z-0" />
-
-            {steps.map((st, i) => (
+          {/* Visual Pyramid Funnel */}
+          <div className="flex flex-col items-center space-y-3.5 my-8">
+            {pyramidSteps.map((step) => (
               <div 
-                key={i} 
-                className="relative z-10 bg-[#F7FAFC] md:bg-transparent pt-2 md:pt-0"
+                key={step.level}
+                className={`w-full ${step.widthClass} ${step.bgClass} rounded-xl border p-4 sm:p-5 transition-all duration-300 hover:scale-[1.01]`}
               >
-                {/* Step Circle & Number */}
-                <div className="w-14 h-14 rounded-full bg-white border border-[rgba(14,31,51,0.14)] card-shadow flex items-center justify-center font-serif text-lg font-semibold text-[#0E1F33] mb-5">
-                  {st.num}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-current/10 pb-2.5 mb-2.5">
+                  <div className="flex items-center space-x-3">
+                    <span className={`px-2.5 py-1 rounded-md text-xs font-bold tracking-wider uppercase ${step.numBadge}`}>
+                      {step.tier}
+                    </span>
+                    <h3 className="font-serif text-lg sm:text-xl font-semibold tracking-tight">
+                      {step.title}
+                    </h3>
+                  </div>
+                  <span className="text-xs font-medium opacity-85 tracking-wide">
+                    {step.subtitle}
+                  </span>
                 </div>
-
-                <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#0E1F33] mb-2">
-                  {st.title}
-                </h3>
-                <p className="text-sm text-[#4A5B70] leading-relaxed font-sans">
-                  {st.desc}
+                <p className="text-xs sm:text-sm leading-relaxed opacity-90 font-sans">
+                  {step.desc}
                 </p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <button
+              onClick={onOpenConsultation}
+              className="inline-flex items-center justify-center px-6 py-3 text-xs font-semibold text-white bg-[#0E1F33] hover:bg-[#162C47] rounded-lg shadow-sm transition-colors cursor-pointer"
+            >
+              <span>Initiate Stage 01 Consultation</span>
+              <ArrowUpRight className="w-4 h-4 ml-1.5 text-slate-300" strokeWidth={1.5} />
+            </button>
           </div>
         </div>
 
@@ -122,10 +171,10 @@ export default function WhyChooseUs({ onOpenConsultation }) {
         <div className="pt-12 border-t border-[rgba(14,31,51,0.10)]">
           <div className="max-w-3xl mb-8 space-y-1">
             <p className="text-xs font-semibold tracking-wider uppercase text-[#A8803A]">
-              Institutional Standing
+              Institutional Panel Counsel
             </p>
             <h3 className="text-2xl sm:text-3xl font-serif font-normal text-[#0E1F33]">
-              Trusted by public sector banks &amp; government bodies.
+              Trusted by nationalized banks &amp; public bodies.
             </h3>
           </div>
 
@@ -204,16 +253,16 @@ export default function WhyChooseUs({ onOpenConsultation }) {
                 >
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
-                    className="w-full py-5 text-left flex items-center justify-between space-x-4 focus:outline-none group"
+                    className="w-full py-5 text-left flex items-center justify-between space-x-4 focus:outline-none group cursor-pointer"
                     aria-expanded={isOpen}
                   >
                     <span className="font-serif text-lg sm:text-xl text-[#0E1F33] font-normal group-hover:text-[#A8803A] transition-colors">
                       {faq.q[lang]}
                     </span>
                     <ChevronDown 
-                      className={`w-4 h-4 text-[#738499] shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180 text-[#A8803A]' : ''}`}
-                      strokeWidth={1.5}
-                    />
+                    className={`w-4 h-4 text-[#738499] shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180 text-[#A8803A]' : ''}`}
+                    strokeWidth={1.5}
+                  />
                   </button>
 
                   {isOpen && (

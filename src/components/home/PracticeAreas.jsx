@@ -17,12 +17,15 @@ export default function PracticeAreas({ onOpenConsultation }) {
         {/* Section Header with Editorial Rhythm */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 pb-6 border-b border-[rgba(14,31,51,0.10)]">
           <div className="max-w-2xl space-y-2">
-            <p className="text-xs font-semibold tracking-wider uppercase text-[#A8803A]">
-              Areas of Legal Practice
-            </p>
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#EEF3F8] border border-[rgba(14,31,51,0.08)] text-xs font-semibold uppercase tracking-wider text-[#A8803A]">
+              <span>Senior Experience with Young Enthusiasm</span>
+            </div>
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#0E1F33] tracking-tight">
-              Disciplined counsel across core legal domains.
+              Disciplined counsel across 8 core legal domains.
             </h2>
+            <p className="text-xs sm:text-sm text-[#4A5B70] pt-1">
+              From trademark brand protection and 30-year property title clearance to trial litigation across Jamnagar - 361001 and other cities in Gujarat.
+            </p>
           </div>
           
           <div className="mt-4 md:mt-0">
@@ -30,7 +33,7 @@ export default function PracticeAreas({ onOpenConsultation }) {
               to="/practice-areas"
               className="inline-flex items-center text-xs sm:text-sm font-medium text-[#0E1F33] hover:text-[#A8803A] editorial-link transition-colors group"
             >
-              <span>Explore all court practice profiles</span>
+              <span>Explore all 8 practice profiles</span>
               <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" strokeWidth={1.5} />
             </Link>
           </div>

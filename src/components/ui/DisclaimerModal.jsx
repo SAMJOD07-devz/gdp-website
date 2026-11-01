@@ -41,34 +41,38 @@ export default function DisclaimerModal({ forceOpen, onCloseForce }) {
           </div>
           <div>
             <h2 id="disclaimer-title" className="font-serif font-semibold text-[#0E1F33] text-base sm:text-xl">
-              Bar Council of India Compliance
+              Bar Council of India Compliance &amp; Disclaimer
             </h2>
             <p className="text-[11px] sm:text-xs text-[#738499]">
-              Regulatory statement under the Advocates Act, 1961
+              Regulatory statement under the Advocates Act, 1961 · GD PANDYA ASSOCIATES
             </p>
           </div>
         </div>
 
         {/* Content */}
-        <div className="space-y-3 text-xs sm:text-sm text-[#4A5B70] leading-relaxed max-h-[50vh] overflow-y-auto pr-1">
+        <div className="space-y-3.5 text-xs sm:text-sm text-[#4A5B70] leading-relaxed max-h-[50vh] overflow-y-auto pr-1">
+          <div className="p-3 bg-[#EEF3F8]/70 border border-[rgba(14,31,51,0.08)] rounded-lg text-[#0E1F33] font-medium text-xs leading-relaxed">
+            <strong>Important Notice on Advertisements:</strong> This website is purely informational and educational in nature, created without any motive of advertisement, solicitation, personal publicity, or commercial inducement, in strict adherence to the rules established by the Bar Council of India.
+          </div>
+
           <p>
-            Under the rules established by the <strong>Bar Council of India</strong>, advocates and law firms are strictly prohibited from soliciting work or advertising in any form or medium.
+            Under the rules established by the <strong>Bar Council of India</strong>, advocates and law firms are strictly prohibited from soliciting work, advertising, or touting in any form or medium.
           </p>
           <p>
-            By clicking <strong>&quot;I Understand &amp; Agree&quot;</strong> and accessing this website, you confirm the following:
+            By clicking <strong>&quot;I Understand &amp; Agree&quot;</strong> and accessing this website, the user confirms the following:
           </p>
           <ul className="list-disc list-inside space-y-1.5 pl-1 text-[11px] sm:text-xs text-[#4A5B70]">
             <li>
-              You are accessing information regarding <strong>GD Pandya &amp; Associates</strong> entirely of your own volition without any solicitation, advertisement, or inducement.
+              You are accessing information regarding <strong>GD PANDYA ASSOCIATES</strong> entirely of your own volition and initiative, without any solicitation, advertisement, personal publicity, or commercial inducement.
             </li>
             <li>
-              The materials and case outlines on this site are solely for general informational purposes and do not constitute formal legal counsel or advice.
+              The materials, legal outlines, and case reports on this site are solely for general informational purposes and do not constitute formal legal counsel or professional legal opinion.
             </li>
             <li>
               Viewing this website, downloading information, or submitting an inquiry does not establish an advocate-client relationship.
             </li>
             <li>
-              GD Pandya &amp; Associates accepts no liability for any reliance placed on the information provided on this platform without formal legal consultation.
+              <strong>GD PANDYA ASSOCIATES</strong> accepts no liability for any reliance placed on the information provided on this platform without formal legal consultation.
             </li>
           </ul>
         </div>

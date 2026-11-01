@@ -7,7 +7,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
     name: '',
     phone: '',
     email: '',
-    practiceArea: 'Civil & Criminal Litigation',
+    practiceArea: 'Intellectual Property & Trademarks',
     preferredDate: '',
     message: ''
   });
@@ -64,7 +64,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
     
     // Construct WhatsApp message with formatted inquiry details
     const text = encodeURIComponent(
-      `*New Legal Consultation Request*\n\n` +
+      `*New Legal Consultation Request — GD PANDYA ASSOCIATES*\n\n` +
       `*Name:* ${formData.name}\n` +
       `*Phone:* ${formData.phone}\n` +
       `*Email:* ${formData.email || 'Not specified'}\n` +
@@ -94,7 +94,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-1.5 text-[#738499] hover:text-[#0E1F33] rounded-full hover:bg-[#EEF3F8] transition-colors"
+          className="absolute top-5 right-5 p-1.5 text-[#738499] hover:text-[#0E1F33] rounded-full hover:bg-[#EEF3F8] transition-colors cursor-pointer"
           aria-label="Close dialog"
         >
           <X className="w-5 h-5" strokeWidth={1.5} />
@@ -119,165 +119,147 @@ export default function ConsultationModal({ isOpen, onClose }) {
                 href={FIRM_DETAILS.social.phone}
                 className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-2.5 bg-[#EEF3F8] text-[#0E1F33] border border-[rgba(14,31,51,0.10)] rounded-lg text-xs font-semibold hover:bg-[#E2EAF2] transition-colors"
               >
-                <Phone className="w-3.5 h-3.5 mr-2 text-[#A8803A]" strokeWidth={1.5} />
-                Direct Call: +91 98985 98184
+                <Phone className="w-3.5 h-3.5 mr-1.5 text-[#A8803A]" strokeWidth={1.5} />
+                <span>Call Chambers: +91 98985 98184</span>
               </a>
+
               <button
                 onClick={() => {
                   setSubmitted(false);
                   onClose();
                 }}
-                className="w-full sm:w-auto px-5 py-2.5 bg-[#0E1F33] hover:bg-[#162C47] text-white font-semibold rounded-lg text-xs transition-colors"
+                className="w-full sm:w-auto px-4 py-2.5 bg-[#0E1F33] text-white rounded-lg text-xs font-semibold hover:bg-[#162C47] transition-colors cursor-pointer"
               >
-                Close Window
+                Done
               </button>
             </div>
           </div>
         ) : (
-          <div>
-            <div className="mb-6 space-y-1">
-              <p className="text-xs font-semibold uppercase tracking-wider text-[#A8803A]">
-                Jamnagar Chambers &amp; Gujarat High Court
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <p className="text-xs font-semibold tracking-wider uppercase text-[#A8803A]">
+                Chambers Consultation · GD PANDYA ASSOCIATES
               </p>
-              <h2 id="consultation-title" className="font-serif text-2xl sm:text-3xl font-normal text-[#0E1F33]">
-                Schedule a consultation
+              <h2 id="consultation-title" className="font-serif font-semibold text-xl sm:text-2xl text-[#0E1F33] mt-1">
+                Book a Legal Consultation
               </h2>
-              <p className="text-xs sm:text-sm text-[#4A5B70] pt-0.5">
-                Provide your dispute or advisory details to coordinate an appointment with Advocate Gaurav Pandya.
+              <p className="text-xs text-[#738499] mt-1">
+                In-person meetings at Madhav Square, Jamnagar - 361001 or digital briefing.
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              
-              {/* Full Name */}
+            <div className="pt-2 space-y-3">
               <div>
-                <label className="block text-xs font-semibold text-[#0E1F33] mb-1.5">
-                  Full Name <span className="text-[#A8803A]">*</span>
+                <label className="block text-xs font-semibold text-[#0E1F33] mb-1">
+                  Full Name <span className="text-red-500">*</span>
                 </label>
                 <input
                   ref={firstInputRef}
                   type="text"
                   required
+                  placeholder="e.g. Rameshchandra Mehta"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="e.g. Mukesh Mehta"
-                  className="w-full px-3.5 py-2.5 bg-white border border-[rgba(14,31,51,0.16)] rounded-lg text-sm text-[#0E1F33] placeholder-[#738499] focus:outline-none focus:border-[#A8803A] focus:ring-1 focus:ring-[#A8803A] transition-colors"
+                  className="w-full px-3.5 py-2 rounded-lg border border-[rgba(14,31,51,0.14)] text-xs text-[#0E1F33] focus:outline-none focus:border-[#A8803A] focus:ring-1 focus:ring-[#A8803A] bg-slate-50/50"
                 />
               </div>
 
-              {/* Contact Phone + Email */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold text-[#0E1F33] mb-1.5">
-                    Phone / WhatsApp <span className="text-[#A8803A]">*</span>
+                  <label className="block text-xs font-semibold text-[#0E1F33] mb-1">
+                    Mobile Phone (+91) <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="tel"
                     required
+                    placeholder="98985 98184"
                     value={formData.phone}
                     onChange={(e) => {
                       setFormData({ ...formData, phone: e.target.value });
                       if (phoneError) validatePhone(e.target.value);
                     }}
-                    onBlur={(e) => validatePhone(e.target.value)}
-                    placeholder="+91 98765 43210"
-                    className={`w-full px-3.5 py-2.5 bg-white border rounded-lg text-sm text-[#0E1F33] placeholder-[#738499] focus:outline-none focus:border-[#A8803A] focus:ring-1 focus:ring-[#A8803A] transition-colors ${
-                      phoneError ? 'border-rose-400' : 'border-[rgba(14,31,51,0.16)]'
+                    className={`w-full px-3.5 py-2 rounded-lg border text-xs text-[#0E1F33] focus:outline-none focus:ring-1 bg-slate-50/50 ${
+                      phoneError 
+                        ? 'border-red-400 focus:border-red-500 focus:ring-red-200' 
+                        : 'border-[rgba(14,31,51,0.14)] focus:border-[#A8803A] focus:ring-[#A8803A]'
                     }`}
                   />
                   {phoneError && (
-                    <p className="text-[11px] text-rose-500 mt-1">{phoneError}</p>
+                    <p className="text-[10px] text-red-600 mt-0.5">{phoneError}</p>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#0E1F33] mb-1.5">
+                  <label className="block text-xs font-semibold text-[#0E1F33] mb-1">
                     Email Address <span className="text-[#738499] font-normal">(Optional)</span>
                   </label>
                   <input
                     type="email"
+                    placeholder="client@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="name@domain.com"
-                    className="w-full px-3.5 py-2.5 bg-white border border-[rgba(14,31,51,0.16)] rounded-lg text-sm text-[#0E1F33] placeholder-[#738499] focus:outline-none focus:border-[#A8803A] focus:ring-1 focus:ring-[#A8803A] transition-colors"
+                    className="w-full px-3.5 py-2 rounded-lg border border-[rgba(14,31,51,0.14)] text-xs text-[#0E1F33] focus:outline-none focus:border-[#A8803A] focus:ring-1 focus:ring-[#A8803A] bg-slate-50/50"
                   />
                 </div>
               </div>
 
-              {/* Legal Domain & Preferred Date */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold text-[#0E1F33] mb-1.5">
-                    Legal Domain <span className="text-[#A8803A]">*</span>
-                  </label>
-                  <select
-                    value={formData.practiceArea}
-                    onChange={(e) => setFormData({ ...formData, practiceArea: e.target.value })}
-                    className="w-full px-3 py-2.5 bg-white border border-[rgba(14,31,51,0.16)] rounded-lg text-sm text-[#0E1F33] focus:outline-none focus:border-[#A8803A] focus:ring-1 focus:ring-[#A8803A] transition-colors"
-                  >
-                    {PRACTICE_AREAS.map((pa) => (
-                      <option key={pa.id} value={pa.title}>
-                        {pa.title}
-                      </option>
-                    ))}
-                    <option value="Notary Public Service">Notary Public &amp; Attestation</option>
-                    <option value="General Legal Inquiry">Other Legal Inquiry</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-[#0E1F33] mb-1.5">
-                    Preferred Date
-                  </label>
-                  <input
-                    type="date"
-                    value={formData.preferredDate}
-                    onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
-                    className="w-full px-3.5 py-2.5 bg-white border border-[rgba(14,31,51,0.16)] rounded-lg text-sm text-[#0E1F33] focus:outline-none focus:border-[#A8803A] focus:ring-1 focus:ring-[#A8803A] transition-colors"
-                  />
-                </div>
-              </div>
-
-              {/* Brief Matter Summary */}
               <div>
-                <label className="block text-xs font-semibold text-[#0E1F33] mb-1.5">
-                  Brief Outline of Matter <span className="text-[#A8803A]">*</span>
+                <label className="block text-xs font-semibold text-[#0E1F33] mb-1">
+                  Practice Domain <span className="text-red-500">*</span>
+                </label>
+                <select
+                  value={formData.practiceArea}
+                  onChange={(e) => setFormData({ ...formData, practiceArea: e.target.value })}
+                  className="w-full px-3.5 py-2 rounded-lg border border-[rgba(14,31,51,0.14)] text-xs text-[#0E1F33] focus:outline-none focus:border-[#A8803A] focus:ring-1 focus:ring-[#A8803A] bg-white cursor-pointer"
+                >
+                  {PRACTICE_AREAS.map((area) => (
+                    <option key={area.id} value={area.title}>
+                      {area.title}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-[#0E1F33] mb-1">
+                  Preferred Consultation Timing
+                </label>
+                <input
+                  type="date"
+                  value={formData.preferredDate}
+                  onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
+                  className="w-full px-3.5 py-2 rounded-lg border border-[rgba(14,31,51,0.14)] text-xs text-[#0E1F33] focus:outline-none focus:border-[#A8803A] focus:ring-1 focus:ring-[#A8803A] bg-slate-50/50"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-[#0E1F33] mb-1">
+                  Brief Overview of Matter <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   required
                   rows={3}
+                  placeholder="Outline key facts, land survey numbers, trademark name, or case details..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Outline key facts, court summons, property location, or trademark query..."
-                  className="w-full px-3.5 py-2.5 bg-white border border-[rgba(14,31,51,0.16)] rounded-lg text-sm text-[#0E1F33] placeholder-[#738499] focus:outline-none focus:border-[#A8803A] focus:ring-1 focus:ring-[#A8803A] transition-colors resize-none"
+                  className="w-full px-3.5 py-2 rounded-lg border border-[rgba(14,31,51,0.14)] text-xs text-[#0E1F33] focus:outline-none focus:border-[#A8803A] focus:ring-1 focus:ring-[#A8803A] bg-slate-50/50"
                 />
               </div>
+            </div>
 
-              {/* Quiet Helper Text (no aggressive overclaims) */}
-              <p className="text-[11px] text-[#738499] leading-relaxed pt-1">
-                Inquiries are received directly by Advocate Gaurav Pandya and handled with professional discretion. Submission does not establish an attorney-client relationship until formally retained.
+            <div className="pt-3 border-t border-[rgba(14,31,51,0.08)]">
+              <button
+                type="submit"
+                className="w-full inline-flex items-center justify-center px-6 py-3 bg-[#0E1F33] hover:bg-[#162C47] text-white font-semibold rounded-lg text-xs shadow-sm transition-all duration-150 cursor-pointer"
+              >
+                <span>Proceed to WhatsApp Consultation</span>
+                <ArrowUpRight className="w-4 h-4 ml-1.5" strokeWidth={1.5} />
+              </button>
+              <p className="text-[10px] text-[#738499] text-center mt-2">
+                Advocate-client confidentiality strictly protected under the Advocates Act, 1961.
               </p>
-
-              {/* Actions */}
-              <div className="pt-3 flex flex-col sm:flex-row sm:items-center sm:justify-end gap-2 sm:gap-3">
-                <button
-                  type="button"
-                  onClick={onClose}
-                  className="order-2 sm:order-1 px-4 py-2 text-xs font-medium text-[#4A5B70] hover:text-[#0E1F33] transition-colors"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="order-1 sm:order-2 w-full sm:w-auto inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold text-white bg-[#0E1F33] hover:bg-[#162C47] rounded-lg shadow-sm hover:shadow transition-all duration-200 cursor-pointer"
-                >
-                  <span>Send via WhatsApp</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 text-slate-300" strokeWidth={1.5} />
-                </button>
-              </div>
-
-            </form>
-          </div>
+            </div>
+          </form>
         )}
 
       </div>

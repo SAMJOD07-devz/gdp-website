@@ -17,15 +17,15 @@ export default function Home() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What types of cases does GD Pandya Associates handle?",
+        "name": "What types of cases does GD PANDYA ASSOCIATES handle?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "GD Pandya Associates handles civil and criminal litigation, trademark registration, cheque bounce cases (Section 138 NI Act), property title clearance, banking recovery, family and matrimonial law, and High Court writ petitions in Jamnagar, Gujarat."
+          "text": "GD PANDYA ASSOCIATES handles Intellectual Property & Trademarks, Real Estate & Title Clearance, Banking & Financial Recovery, All Types of Registration & Documentation, Family & Matrimonial Law, Civil & Criminal Litigation, Corporate & Commercial Law, and Labor & Industrial Law across Jamnagar and other cities in Gujarat."
         }
       },
       {
         "@type": "Question",
-        "name": "Where is GD Pandya Associates located?",
+        "name": "Where is GD PANDYA ASSOCIATES located?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "The firm is located at Office No. 241, 2nd Floor, Madhav Square, Limda Lane Corner, Jamnagar – 361001, Gujarat, India. Consultation hours are Monday–Saturday, 9:30 AM to 9:00 PM."
@@ -41,18 +41,18 @@ export default function Home() {
       },
       {
         "@type": "Question",
-        "name": "How do I book a consultation with GD Pandya Associates?",
+        "name": "How do I book a consultation with GD PANDYA ASSOCIATES?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You can book a consultation by calling or WhatsApp messaging +91 98985 98184, emailing advocate_pandya@hotmail.com, or filling the consultation form on this website."
+          "text": "You can book a consultation by calling or WhatsApp messaging +91 98985 98184, emailing advocate_pandya@hotmail.com, or using the consultation form on this website."
         }
       },
       {
         "@type": "Question",
-        "name": "Which courts does GD Pandya Associates practice in?",
+        "name": "Which courts does GD PANDYA ASSOCIATES practice in?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The firm practices before the District & Sessions Court Jamnagar, Gujarat High Court, and various civil courts across Saurashtra region. Advocate Pandya is enrolled with the Bar Council of Gujarat since 2007."
+          "text": "The firm practices before the District & Sessions Courts of Jamnagar and other cities across Gujarat. Advocate Gaurav Pandya is enrolled with the Bar Council of Gujarat since 2007 (19+ years standing)."
         }
       }
     ]
@@ -67,7 +67,7 @@ export default function Home() {
     "jobTitle": "Advocate, Government of India Notary & Registered Trademark Attorney",
     "worksFor": {
       "@type": "LegalService",
-      "name": "GD Pandya Associates",
+      "name": "GD PANDYA ASSOCIATES",
       "url": "https://advocate-pandya.com"
     },
     "alumniOf": {
@@ -91,7 +91,7 @@ export default function Home() {
         "credentialCategory": "diploma"
       }
     ],
-    "knowsAbout": ["Civil Litigation", "Criminal Litigation", "Trademark Law", "Banking Recovery Law", "Property Law", "Family Law", "Notarial Services"],
+    "knowsAbout": ["Intellectual Property Law", "Property Title Verification", "Banking Recovery Law", "Notarial Registration", "Civil Litigation", "Criminal Litigation", "Family Law"],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Office No. 241, 2nd Floor, Madhav Square, Limda Lane Corner",
@@ -108,14 +108,14 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>GD Pandya Associates | Advocates & Legal Consultants, Jamnagar, Gujarat</title>
-        <meta name="description" content="Premier law firm in Jamnagar, Gujarat led by Advocate Gaurav D. Pandya (B.Com, L.L.B., DLLP). 18+ years in litigation, trademark law, banking recovery & property law. Govt. Notary & Regd. Trademark Attorney." />
-        <meta name="keywords" content="Advocate Jamnagar, GD Pandya Associates, Law Firm Jamnagar Gujarat, High Court Advocate Gujarat, Trademark Attorney Jamnagar, Notary Jamnagar, Cheque Bounce Lawyer Jamnagar, Property Lawyer Jamnagar" />
+        <title>GD PANDYA ASSOCIATES | Advocates & Legal Consultants, Jamnagar - 361001</title>
+        <meta name="description" content="GD PANDYA ASSOCIATES: Senior experience with young enthusiasm. 19+ years in trial litigation, trademark law, banking recovery, and property title clearance in Jamnagar - 361001 and across Gujarat." />
+        <meta name="keywords" content="Advocate Jamnagar, GD PANDYA ASSOCIATES, Law Firm Jamnagar 361001, Trademark Attorney Jamnagar, Notary Jamnagar, Cheque Bounce Lawyer Jamnagar, Property Lawyer Jamnagar" />
         <link rel="canonical" href="https://advocate-pandya.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://advocate-pandya.com/" />
-        <meta property="og:title" content="GD Pandya Associates | Advocates & Legal Consultants, Jamnagar" />
-        <meta property="og:description" content="18+ Years of Legal Mastery in Jamnagar & Gujarat High Court. Civil & Criminal Litigation, Trademarks, Banking Recovery, and Property Law." />
+        <meta property="og:title" content="GD PANDYA ASSOCIATES | Jamnagar - 361001" />
+        <meta property="og:description" content="Senior experience with young enthusiasm. 19+ Years of Legal Mastery in Jamnagar - 361001 and other cities in Gujarat." />
         <meta property="og:image" content="https://advocate-pandya.com/assets/team/gaurav-pandya-office.webp" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(personSchema)}</script>

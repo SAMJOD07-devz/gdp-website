@@ -19,18 +19,18 @@ export default function HeroSection({ onOpenConsultation }) {
             {/* Subtle Label */}
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/90 border border-[rgba(14,31,51,0.12)] text-xs text-[#4A5B70] shadow-xs">
               <span className="w-1.5 h-1.5 rounded-full bg-[#A8803A]" />
-              <span className="font-medium text-[#0E1F33]">Advocates &amp; Legal Consultants · Jamnagar, Gujarat</span>
+              <span className="font-semibold text-[#0E1F33]">GD PANDYA ASSOCIATES · Jamnagar - 361001</span>
             </div>
 
-            {/* Sentence Case Headline */}
+            {/* Headline with tagline */}
             <h1 className="text-4xl sm:text-5xl lg:text-[3.75rem] font-serif font-normal text-[#0E1F33] leading-[1.12] tracking-tight">
-              Defending your rights with deliberate, measured counsel.
-              <span className="sr-only"> — Advocates & Legal Consultants, Jamnagar, Gujarat</span>
+              Senior experience with young enthusiasm.
+              <span className="sr-only"> — GD PANDYA ASSOCIATES, Advocates &amp; Legal Consultants, Jamnagar - 361001</span>
             </h1>
 
-            {/* Tight, Human Supporting Copy */}
+            {/* Supporting Copy */}
             <p className="text-base sm:text-lg text-[#4A5B70] leading-relaxed max-w-2xl font-sans font-normal">
-              Led by Advocate Gaurav D. Pandya, Government of India Notary and Registered Trade Mark Attorney. Providing trial advocacy, civil litigation, banking dispute resolution, and commercial protection across Saurashtra and the High Court of Gujarat.
+              Anchored by senior mentor Adv. Dinesh B. Pandya and spearheaded by Adv. Gaurav D. Pandya (Government of India Notary &amp; Registered Trade Mark Attorney). Providing trial advocacy, civil property litigation, banking dispute recovery, and brand protection across Jamnagar and other cities in Gujarat.
             </p>
 
             {/* Action Buttons */}
@@ -47,7 +47,7 @@ export default function HeroSection({ onOpenConsultation }) {
                 href="#practice-areas"
                 className="inline-flex items-center text-sm font-medium text-[#0E1F33] hover:text-[#A8803A] editorial-link transition-colors group py-1"
               >
-                <span>View practice domains</span>
+                <span>View 8 practice domains</span>
                 <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" strokeWidth={1.5} />
               </a>
             </div>
@@ -56,14 +56,14 @@ export default function HeroSection({ onOpenConsultation }) {
             <div className="pt-6 sm:pt-8 mt-4 border-t border-[rgba(14,31,51,0.10)] grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 text-left">
               <div>
                 <p className="text-xs uppercase tracking-wider text-[#738499] font-medium">Experience</p>
-                <p className="text-sm font-semibold text-[#0E1F33] mt-0.5">18+ Years Standing</p>
+                <p className="text-sm font-semibold text-[#0E1F33] mt-0.5">19+ Years Practice</p>
                 <p className="text-xs text-[#4A5B70]">Bar Council of Gujarat (2007)</p>
               </div>
 
               <div>
                 <p className="text-xs uppercase tracking-wider text-[#738499] font-medium">Jurisdictions</p>
-                <p className="text-sm font-semibold text-[#0E1F33] mt-0.5">District &amp; High Court</p>
-                <p className="text-xs text-[#4A5B70]">Jamnagar &amp; Gujarat High Court</p>
+                <p className="text-sm font-semibold text-[#0E1F33] mt-0.5">Jamnagar &amp; Other Cities</p>
+                <p className="text-xs text-[#4A5B70]">District &amp; Sessions Courts</p>
               </div>
 
               <div className="col-span-2 sm:col-span-1">
@@ -79,21 +79,21 @@ export default function HeroSection({ onOpenConsultation }) {
           <div className="lg:col-span-5">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
-              {/* Subtle Layered Border Frame */}
+              {/* Layered Border Frame */}
               <div className="bg-white p-3 rounded-xl border border-[rgba(14,31,51,0.12)] card-shadow">
                 
                 {/* Real Chambers Portrait */}
                 <div className="relative aspect-[4/5] rounded-lg overflow-hidden bg-[#EEF3F8]">
                   <img
                     src="/assets/team/gaurav-pandya-office.webp"
-                    alt="Advocate Gaurav D. Pandya, Principal Advocate at GD Pandya Associates, Jamnagar — Government Notary & Registered Trademark Attorney"
+                    alt="Advocate Gaurav D. Pandya, Managing Principal at GD PANDYA ASSOCIATES, Jamnagar - 361001"
                     className="w-full h-full object-cover object-top filter contrast-[1.03]"
                     loading="eager"
                     width="900"
                     height="1200"
                   />
                   
-                  {/* Discreet Government Notary badge overlay */}
+                  {/* Government Notary badge overlay */}
                   <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs px-2.5 py-1 rounded border border-[rgba(14,31,51,0.10)] text-[11px] font-medium text-[#0E1F33] flex items-center space-x-1.5 shadow-xs">
                     <ShieldCheck className="w-3.5 h-3.5 text-[#A8803A]" strokeWidth={1.5} />
                     <span>Govt. of India Notary</span>
@@ -106,8 +106,8 @@ export default function HeroSection({ onOpenConsultation }) {
                     <h2 className="font-serif font-semibold text-lg text-[#0E1F33]">
                       Adv. Gaurav D. Pandya
                     </h2>
-                    <span className="text-[11px] text-[#A8803A] font-medium uppercase tracking-wider">
-                      Principal Counsel
+                    <span className="text-[11px] text-[#A8803A] font-semibold uppercase tracking-wider">
+                      Managing Principal
                     </span>
                   </div>
 
@@ -116,8 +116,8 @@ export default function HeroSection({ onOpenConsultation }) {
                   </p>
                   
                   <div className="mt-3 pt-2.5 border-t border-[rgba(14,31,51,0.08)] flex items-center justify-between text-[11px] text-[#738499]">
-                    <span>Enrolled: 2007 (Bar Council of Gujarat)</span>
-                    <span className="font-medium text-[#0E1F33]">Jamnagar, Gujarat</span>
+                    <span>Bar Standing: 19+ Years</span>
+                    <span className="font-medium text-[#0E1F33]">Jamnagar - 361001</span>
                   </div>
                 </div>
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useOutletContext } from 'react-router-dom';
-import { BookOpen, Clock, Calendar, ArrowRight, ShieldCheck, Scale, Landmark, ChevronRight, Search } from 'lucide-react';
+import { BookOpen, Clock, Calendar, ArrowRight, ShieldCheck, Scale, Landmark, ChevronRight, Search, FileText } from 'lucide-react';
 import { INSIGHTS_ARTICLES } from '../data/insightsData';
 
 export default function Insights() {
@@ -23,22 +23,22 @@ export default function Insights() {
   return (
     <>
       <Helmet>
-        <title>Legal Insights & Practice Guides | GD Pandya Associates, Jamnagar</title>
+        <title>Legal Insights &amp; Landmark Verdicts | GD PANDYA ASSOCIATES, Jamnagar - 361001</title>
         <meta
           name="description"
-          content="Authoritative legal guides and statutory analysis on property title search, trademark registration, and cheque bounce laws in Jamnagar and Gujarat by Advocate Gaurav D. Pandya."
+          content="Authoritative legal articles, landmark court rulings, and public notices in Jamnagar - 361001 and Gujarat by GD PANDYA ASSOCIATES. Digjam Mill verdict, JADA compensation order, property title search, and trademark laws."
         />
         <meta
           name="keywords"
-          content="Gujarat legal guides, property title search Jamnagar, trademark registration Gujarat, cheque bounce Section 138 lawyer, law firm blog Jamnagar"
+          content="Jamnagar court verdicts, Digjam Mill land case, JADA demolition case, Gujarat legal articles, property title search Jamnagar 361001, trademark registration Gujarat, cheque bounce Section 138 lawyer"
         />
         <link rel="canonical" href="https://advocate-pandya.com/insights" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://advocate-pandya.com/insights" />
-        <meta property="og:title" content="Legal Insights & Practical Guides | GD Pandya Associates" />
+        <meta property="og:title" content="Legal Insights &amp; Published Notices | GD PANDYA ASSOCIATES" />
         <meta
           property="og:description"
-          content="Practical legal guidance for individuals and businesses across Gujarat on property verification, trademark registration, and banking litigation."
+          content="Landmark judgments, published court orders, and practice guides across Jamnagar - 361001 and Gujarat."
         />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -57,29 +57,30 @@ export default function Insights() {
           
           {/* Header */}
           <div className="max-w-3xl mb-12 space-y-3 pb-8 border-b border-[rgba(14,31,51,0.10)]">
-            <p className="text-xs font-semibold tracking-wider uppercase text-[#A8803A]">
-              Practical Jurisprudence &amp; Guidance
-            </p>
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#EEF3F8] border border-[rgba(14,31,51,0.08)] text-xs font-semibold uppercase tracking-wider text-[#A8803A]">
+              <span>Senior Experience with Young Enthusiasm</span>
+            </div>
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#0E1F33] tracking-tight">
-              Legal Insights &amp; Practice Guides
+              Legal Insights &amp; Published Notices.
             </h1>
-            <p className="text-sm sm:text-base text-[#4A5B70] leading-relaxed pt-2">
-              Statutory analysis, procedural timelines, and due-diligence protocols for citizens and businesses across Jamnagar, Saurashtra, and Gujarat. Authored by our chamber advocates.
+            <p className="text-base sm:text-lg text-[#4A5B70] leading-relaxed">
+              Landmark court verdicts, official press reports, and statutory legal guidance published by <strong>GD PANDYA ASSOCIATES</strong> across Jamnagar - 361001 and Gujarat.
             </p>
           </div>
 
           {/* Search & Category Filter Bar */}
-          <div className="mb-10 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
-            {/* Category pills */}
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-12 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            
+            {/* Category Pills */}
+            <div className="flex flex-wrap items-center gap-2">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                  className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
                     selectedCategory === cat
                       ? 'bg-[#0E1F33] text-white shadow-xs'
-                      : 'bg-white text-[#4A5B70] border border-[rgba(14,31,51,0.10)] hover:text-[#0E1F33] hover:bg-slate-50'
+                      : 'bg-white text-[#4A5B70] hover:text-[#0E1F33] border border-[rgba(14,31,51,0.10)] hover:bg-[#EEF3F8]'
                   }`}
                 >
                   {cat}
@@ -87,113 +88,133 @@ export default function Insights() {
               ))}
             </div>
 
-            {/* Search Input */}
-            <div className="relative max-w-xs w-full">
-              <Search className="w-4 h-4 text-[#738499] absolute left-3 top-1/2 -translate-y-1/2" strokeWidth={1.5} />
+            {/* Search Box */}
+            <div className="relative w-full md:w-72">
+              <Search className="w-4 h-4 text-[#738499] absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
-                placeholder="Search legal guides..."
+                placeholder="Search verdicts, notices..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-9 pr-3 py-2 text-xs bg-white border border-[rgba(14,31,51,0.12)] rounded-lg text-[#0E1F33] placeholder:text-[#738499] focus:outline-none focus:border-[#A8803A]"
+                className="w-full pl-9 pr-3.5 py-2 rounded-lg bg-white border border-[rgba(14,31,51,0.14)] text-xs text-[#0E1F33] placeholder-[#738499] focus:outline-none focus:border-[#A8803A] focus:ring-1 focus:ring-[#A8803A]"
               />
             </div>
+
           </div>
 
           {/* Articles Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {filteredArticles.map((article) => (
-              <article
-                key={article.slug}
-                className="rounded-xl bg-white border border-[rgba(14,31,51,0.10)] card-shadow overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 group"
+          {filteredArticles.length === 0 ? (
+            <div className="py-16 text-center bg-white rounded-xl border border-[rgba(14,31,51,0.10)] card-shadow">
+              <p className="font-serif text-lg text-[#0E1F33]">No legal insights match your search criteria.</p>
+              <button
+                onClick={() => {
+                  setSearchTerm('');
+                  setSelectedCategory('All');
+                }}
+                className="mt-3 text-xs font-semibold text-[#A8803A] underline cursor-pointer"
               >
-                <div>
-                  {/* Newspaper Notice Thumbnail (if present) */}
-                  {article.noticeImage && (
-                    <div className="relative aspect-[16/9] bg-[#EEF3F8] overflow-hidden border-b border-[rgba(14,31,51,0.08)]">
-                      <img
-                        src={article.noticeImage}
-                        alt={article.title}
-                        className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-300 filter contrast-[1.03]"
-                        loading="lazy"
-                      />
-                      <div className="absolute top-2.5 left-2.5">
-                        <span className="px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider bg-white/95 text-[#0E1F33] border border-[rgba(14,31,51,0.12)] shadow-xs">
-                          {article.newspaper || 'Press Record'}
+                Clear filters
+              </button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredArticles.map((article) => (
+                <article
+                  key={article.slug}
+                  className="rounded-xl bg-white border border-[rgba(14,31,51,0.10)] overflow-hidden card-shadow hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+                >
+                  <div>
+                    {/* Newspaper Document Thumbnail if available */}
+                    {article.noticeImage ? (
+                      <div className="relative aspect-[16/10] bg-[#EEF3F8] overflow-hidden border-b border-[rgba(14,31,51,0.08)]">
+                        <img
+                          src={article.noticeImage}
+                          alt={article.title}
+                          className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-300"
+                          loading="lazy"
+                        />
+                        <div className="absolute top-3 left-3 bg-[#0E1F33]/90 text-white text-[10px] uppercase font-semibold px-2 py-0.5 rounded shadow-xs">
+                          {article.newspaper || 'Published Press'}
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="p-6 pb-0 flex items-center justify-between text-xs text-[#738499]">
+                        <span className="inline-block px-2.5 py-1 rounded text-[11px] font-semibold uppercase tracking-wider text-[#A8803A] bg-[#EEF3F8] border border-[rgba(14,31,51,0.08)]">
+                          {article.category}
+                        </span>
+                        <span className="flex items-center">
+                          <Clock className="w-3.5 h-3.5 mr-1" />
+                          {article.readTime}
                         </span>
                       </div>
-                    </div>
-                  )}
+                    )}
 
-                  <div className="p-6 sm:p-7 space-y-3.5">
-                    <div className="flex items-center justify-between text-[11px] text-[#738499]">
-                      <span className="font-semibold text-[#A8803A] uppercase tracking-wider">
-                        {article.category}
-                      </span>
-                      <span className="flex items-center">
-                        <Clock className="w-3 h-3 mr-1" strokeWidth={1.5} />
-                        {article.readTime}
-                      </span>
-                    </div>
+                    <div className="p-6 space-y-3">
+                      {article.noticeImage && (
+                        <div className="flex items-center justify-between text-[11px] text-[#738499]">
+                          <span className="font-semibold text-[#A8803A] uppercase tracking-wider">
+                            {article.category}
+                          </span>
+                          <span className="flex items-center">
+                            <Clock className="w-3.5 h-3.5 mr-1" />
+                            {article.readTime}
+                          </span>
+                        </div>
+                      )}
 
-                    <h2 className="font-serif text-xl sm:text-2xl font-normal text-[#0E1F33] group-hover:text-[#A8803A] transition-colors leading-snug">
-                      <Link to={`/insights/${article.slug}`}>
-                        {article.shortTitle}
+                      <h2 className="font-serif text-xl font-normal text-[#0E1F33] leading-snug group-hover:text-[#A8803A] transition-colors">
+                        <Link to={`/insights/${article.slug}`}>
+                          {article.title}
+                        </Link>
+                      </h2>
+
+                      <p className="text-xs sm:text-sm text-[#4A5B70] leading-relaxed line-clamp-3">
+                        {article.excerpt}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="p-6 pt-0 border-t border-[rgba(14,31,51,0.06)] mt-4">
+                    <div className="pt-3 flex items-center justify-between text-xs">
+                      <span className="text-[#738499] flex items-center">
+                        <Calendar className="w-3 h-3 mr-1" />
+                        {new Date(article.publishDate).toLocaleDateString('en-IN', {
+                          day: 'numeric',
+                          month: 'short',
+                          year: 'numeric'
+                        })}
+                      </span>
+
+                      <Link
+                        to={`/insights/${article.slug}`}
+                        className="font-semibold text-[#0E1F33] group-hover:text-[#A8803A] inline-flex items-center transition-colors"
+                      >
+                        <span>Read analysis</span>
+                        <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
                       </Link>
-                    </h2>
-
-                    <p className="text-xs sm:text-sm text-[#4A5B70] leading-relaxed line-clamp-3">
-                      {article.excerpt}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="p-6 sm:p-7 pt-0">
-                  <div className="pt-4 border-t border-[rgba(14,31,51,0.06)] flex items-center justify-between">
-                    <div className="flex items-center space-x-2.5">
-                      <img
-                        src={article.author.image}
-                        alt={article.author.name}
-                        className="w-7 h-7 rounded-full object-cover border border-[rgba(14,31,51,0.10)]"
-                        loading="lazy"
-                        width="28"
-                        height="28"
-                      />
-                      <div className="text-[11px] leading-tight">
-                        <span className="font-medium text-[#0E1F33] block">{article.author.name}</span>
-                        <span className="text-[#738499]">{article.publishDate}</span>
-                      </div>
                     </div>
-
-                    <Link
-                      to={`/insights/${article.slug}`}
-                      className="inline-flex items-center text-xs font-semibold text-[#0E1F33] group-hover:text-[#A8803A] transition-colors"
-                    >
-                      <span>Read {article.noticeImage ? 'Verdict' : 'Guide'}</span>
-                      <ChevronRight className="w-3.5 h-3.5 ml-0.5 group-hover:translate-x-0.5 transition-transform" strokeWidth={1.5} />
-                    </Link>
                   </div>
-                </div>
-              </article>
-            ))}
-          </div>
+                </article>
+              ))}
+            </div>
+          )}
 
-          {/* Consultation CTA Strip */}
-          <div className="mt-16 rounded-xl bg-[#EEF3F8] border border-[rgba(14,31,51,0.10)] p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="space-y-1">
-              <h3 className="font-serif text-xl font-normal text-[#0E1F33]">
-                Need tailored counsel for a specific legal matter?
+          {/* Consultation CTA Banner */}
+          <div className="mt-16 p-8 rounded-2xl bg-white border border-[rgba(14,31,51,0.12)] card-shadow flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div className="space-y-1 max-w-xl">
+              <h3 className="font-serif text-2xl font-normal text-[#0E1F33]">
+                Require legal counsel on an active property dispute or case notice?
               </h3>
               <p className="text-xs sm:text-sm text-[#4A5B70]">
-                Our advocates review property documents, trademark objections, and litigation cases directly in chambers.
+                Schedule an in-person case scrutiny with Advocate Gaurav D. Pandya at our Jamnagar chambers.
               </p>
             </div>
             <button
               onClick={openConsultation}
-              className="inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold text-white bg-[#0E1F33] hover:bg-[#162C47] rounded-lg shadow-sm transition-colors shrink-0"
+              className="inline-flex items-center justify-center px-6 py-3 bg-[#0E1F33] hover:bg-[#162C47] text-white rounded-lg text-xs font-semibold shadow-sm transition-colors shrink-0 cursor-pointer"
             >
-              <span>Schedule Chamber Consultation</span>
-              <ArrowRight className="w-3.5 h-3.5 ml-1.5" strokeWidth={1.5} />
+              <span>Schedule Case Review</span>
+              <ChevronRight className="w-4 h-4 ml-1" />
             </button>
           </div>
 
@@ -202,4 +223,3 @@ export default function Insights() {
     </>
   );
 }
-

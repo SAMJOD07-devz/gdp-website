@@ -7,16 +7,16 @@ export default function ContactCTA({ onOpenConsultation }) {
     <section className="py-20 lg:py-24 bg-[#EEF3F8] border-b border-[rgba(14,31,51,0.08)]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
         
-        <p className="text-xs font-semibold tracking-wider uppercase text-[#A8803A]">
-          Jamnagar Office &amp; High Court Practice
-        </p>
+        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white border border-[rgba(14,31,51,0.08)] text-xs font-semibold uppercase tracking-wider text-[#A8803A]">
+          <span>Jamnagar Chambers &amp; Courts across Gujarat</span>
+        </div>
 
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#0E1F33] tracking-tight leading-tight">
           Facing a legal dispute, court notice, or trademark requirement?
         </h2>
 
         <p className="text-base sm:text-lg text-[#4A5B70] max-w-2xl mx-auto leading-relaxed">
-          Arrange a structured consultation with Advocate Gaurav D. Pandya at our Jamnagar chambers or coordinate via direct phone and WhatsApp.
+          Arrange a structured consultation with <strong>GD PANDYA ASSOCIATES</strong> at our Jamnagar chambers or coordinate directly via phone and WhatsApp.
         </p>
 
         {/* Action Buttons */}
@@ -50,7 +50,7 @@ export default function ContactCTA({ onOpenConsultation }) {
 
         <div className="pt-4 flex items-center justify-center space-x-2 text-xs text-[#738499]">
           <MapPin className="w-3.5 h-3.5 text-[#A8803A]" strokeWidth={1.5} />
-          <span>Office No. 241, 2nd Floor, Madhav Square, Limda Lane Corner, Jamnagar</span>
+          <span>Office No. 241, 2nd Floor, Madhav Square, Limda Lane Corner, Jamnagar - 361001</span>
         </div>
 
       </div>

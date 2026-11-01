@@ -1,25 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, ShieldCheck, Scale, Award, BookOpen } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Scale, Award, Landmark, CheckCircle2 } from 'lucide-react';
 import { FIRM_DETAILS } from '../../data/firmData';
 
 export default function AboutSnippet() {
   const credentials = [
     {
-      title: "Direct Senior Counsel Access",
-      desc: "Every legal matter is directly reviewed, drafted, and strategized by Advocate Gaurav Pandya."
+      title: "IP (Intellectual Property)",
+      badge: "Brand Protection",
+      desc: "Registered Trade Mark Attorney handling brand filings, opposition hearings, and nationwide trademark protection across India."
     },
     {
-      title: "Institutional Standing",
-      desc: "Empanelled counsel for premier public sector banks, municipal universities, and statutory boards."
+      title: "19+ Years Experience",
+      badge: "Courtroom Practice",
+      desc: "Continuous active courtroom practice and dispute representation before the Courts of Jamnagar and other cities in Gujarat."
     },
     {
-      title: "Comprehensive IP Protection",
-      desc: "Govt. registered Trademark Attorney handling nationwide filings, opposition hearings, and renewals."
+      title: "Institutional Panel Counsel",
+      badge: "Nationalized Panels",
+      desc: "Empanelled legal counsel for nationalized public sector banks, state universities, and government statutory bodies."
     },
     {
-      title: "18+ Years Bar Standing",
-      desc: "Enrolled with the Bar Council of Gujarat (2007). Continuous unblemished trial record in Jamnagar & High Court."
+      title: "Trustworthy Advice",
+      badge: "Senior Guidance",
+      desc: "Ethical, confidential, and client-first legal counsel built on more than four decades of respected family bar standing."
     }
   ];
 
@@ -32,12 +36,12 @@ export default function AboutSnippet() {
           {/* Left Column: Official Document & Quote (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             
-            {/* Business Card & Notary Credential Card */}
+            {/* Practice Cards Document */}
             <div className="bg-white p-3 rounded-xl border border-[rgba(14,31,51,0.12)] card-shadow">
               <div className="rounded-lg overflow-hidden border border-[rgba(14,31,51,0.08)] bg-slate-50">
                 <img
                   src="/assets/dinesh-gaurav-cards.webp"
-                  alt="Official practice cards of Senior Advocate Dinesh B. Pandya and Advocate Gaurav D. Pandya — GD Pandya Associates, Jamnagar"
+                  alt="Official practice cards of Senior Advocate Dinesh B. Pandya and Advocate Gaurav D. Pandya — GD PANDYA ASSOCIATES, Jamnagar"
                   className="w-full h-auto object-cover"
                   loading="lazy"
                   width="800"
@@ -54,11 +58,11 @@ export default function AboutSnippet() {
             <div className="p-6 rounded-xl bg-white border border-[rgba(14,31,51,0.08)] card-shadow relative">
               <span className="text-[#A8803A] font-serif text-3xl leading-none absolute top-4 left-4 select-none">&ldquo;</span>
               <p className="font-serif italic text-base sm:text-lg text-[#0E1F33] leading-relaxed pl-5">
-                Legal advocacy is not merely about arguing statutes; it is about providing decisive, dependable protection for people&apos;s livelihoods, hard-earned properties, and families.
+                Senior experience with young enthusiasm — combining four decades of family jurisprudence with modern, dynamic courtroom strategy.
               </p>
               <div className="mt-4 pt-3 border-t border-[rgba(14,31,51,0.08)] flex items-center justify-between text-xs">
-                <span className="font-semibold text-[#0E1F33]">Advocate Gaurav D. Pandya</span>
-                <span className="text-[#738499]">Principal Counsel</span>
+                <span className="font-semibold text-[#0E1F33]">GD PANDYA ASSOCIATES</span>
+                <span className="text-[#A8803A] font-medium">Jamnagar &amp; Other Cities</span>
               </div>
             </div>
 
@@ -69,32 +73,37 @@ export default function AboutSnippet() {
             
             <div className="space-y-2">
               <p className="text-xs font-semibold tracking-wider uppercase text-[#A8803A]">
-                The Practice &amp; Founder
+                The Practice &amp; Heritage
               </p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#0E1F33] leading-tight tracking-tight">
-                A trusted legal pillar built on integrity, diligence, and courtroom experience.
+                Senior experience with young enthusiasm.
               </h2>
             </div>
 
             <p className="text-base sm:text-lg text-[#4A5B70] leading-relaxed font-sans">
-              Established under the leadership of Advocate Gaurav Dineshandra Pandya, GD Pandya Associates has evolved into one of Jamnagar&apos;s most respected full-service law offices. With formal qualifications spanning B.Com, L.L.B., and Diploma in Labour Laws and Practice (DLLP) from Saurashtra University&apos;s Shah Law College, Adv. Pandya unites sharp financial acumen with comprehensive courtroom prowess.
+              Anchored by the senior guidance of <strong>Advocate Dinesh B. Pandya</strong> and spearheaded by <strong>Advocate Gaurav D. Pandya</strong> (B.Com, L.L.B., DLLP), <strong>GD PANDYA ASSOCIATES</strong> delivers comprehensive legal advocacy built on integrity, deep statutory research, and dedicated client service.
             </p>
 
             <p className="text-sm sm:text-base text-[#4A5B70] leading-relaxed">
-              Appointed as a Government of India Notary and recognized as a Registered Trade Mark Attorney, the firm provides clients with turnkey solutions—from drafting title clearance certificates and securing national trademarks to representing complex disputes before the District Courts and the High Court of Gujarat.
+              Operating from Madhav Square, Jamnagar - 361001, the firm represents clients before the District &amp; Sessions Courts of Jamnagar and other cities across Gujarat. Appointed as a Government of India Notary and Registered Trade Mark Attorney, our chambers provide turnkey legal solutions spanning real estate title clearance, banking recovery litigation, and corporate IP protection.
             </p>
 
-            {/* 4 Key Pillars in clean grid with hairline rules */}
+            {/* 4 Pillars: IP, 19+ exp, Institutional, Trustworthy advice */}
             <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
               {credentials.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="p-4 rounded-lg bg-white border border-[rgba(14,31,51,0.08)] shadow-xs"
+                  className="p-4 rounded-lg bg-white border border-[rgba(14,31,51,0.08)] shadow-xs hover:border-[#A8803A]/50 transition-colors"
                 >
-                  <p className="text-sm font-semibold text-[#0E1F33]">
-                    {item.title}
-                  </p>
-                  <p className="text-xs text-[#4A5B70] mt-1 leading-normal">
+                  <div className="flex items-center justify-between">
+                    <p className="text-sm font-semibold text-[#0E1F33]">
+                      {item.title}
+                    </p>
+                    <span className="text-[10px] uppercase tracking-wider text-[#A8803A] font-semibold bg-[#EEF3F8] px-2 py-0.5 rounded border border-[rgba(14,31,51,0.06)]">
+                      {item.badge}
+                    </span>
+                  </div>
+                  <p className="text-xs text-[#4A5B70] mt-1.5 leading-normal">
                     {item.desc}
                   </p>
                 </div>

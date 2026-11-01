@@ -1,6 +1,6 @@
 /**
- * Legal Insights, Landmark Court Verdicts & Public Notices for GD Pandya Associates
- * Informational content & case publications across Jamnagar and Gujarat.
+ * Legal Insights, Landmark Court Verdicts & Public Notices for GD PANDYA ASSOCIATES
+ * Informational content & case publications across Jamnagar - 361001 and Gujarat.
  */
 
 export const INSIGHTS_ARTICLES = [
@@ -15,7 +15,7 @@ export const INSIGHTS_ARTICLES = [
     noticeImage: "/assets/notices/nobat-digjam-land-verdict.webp",
     author: {
       name: "Adv. Gaurav D. Pandya",
-      title: "Principal Advocate & High Court Counsel",
+      title: "Managing Principal & Court Counsel",
       image: "/assets/team/gaurav-pandya.webp"
     },
     excerpt: "In a historic judgment published in Nobat Daily, the Gujarat High Court held that the acquisition of over 2 lakh square feet of prime land originally acquired for Digjam Mill was illegal after industry closure, ordering the Collector to restore possession to the rightful owners.",
@@ -56,7 +56,7 @@ The Court issued direct orders to the District Collector of Jamnagar to hand ove
     noticeImage: "/assets/notices/sandesh-jada-demolition-case.webp",
     author: {
       name: "Adv. Gaurav D. Pandya",
-      title: "Principal Advocate & Trial Counsel",
+      title: "Managing Principal & Trial Counsel",
       image: "/assets/team/gaurav-pandya.webp"
     },
     excerpt: "The Jamnagar District Court held the demolition of an 88,676 sq. ft. commercial transport godown by the Jamnagar Area Development Authority (JADA) illegal, ordering ₹8.28 Lakh compensation with 6% interest dating back to 1998, holding former TPO personally liable.",
@@ -97,7 +97,7 @@ In a scathing verdict reported by Sandesh newspaper, the Court declared the demo
     noticeImage: "/assets/notices/cheque-bounce-appellate-order.webp",
     author: {
       name: "Adv. Gaurav D. Pandya",
-      title: "Principal Advocate & Bank Panel Counsel",
+      title: "Managing Principal & Bank Panel Counsel",
       image: "/assets/team/gaurav-pandya.webp"
     },
     excerpt: "The Sessions Appellate Court in Jamnagar rejected all 4 criminal appeals filed by an industrial debtor who claimed his signed cheques were 'lost'. The court upheld the Trial Court's 6 months imprisonment and ordered ₹9 Lakh repayment.",
@@ -108,13 +108,13 @@ In a scathing verdict reported by Sandesh newspaper, the Court declared the demo
         heading: "1. The Factual Matrix of the Dispute",
         body: `A factory proprietor in Jamnagar GIDC borrowed funds under commercial business relations from a complainant and issued four separate cheques in repayment. When presented, all four cheques were returned dishonored by the bank without credit.
 
-The complainant, through GD Pandya Associates, instituted four criminal complaints under Section 138 of the Negotiable Instruments Act before the Trial Court.`
+The complainant, through GD PANDYA ASSOCIATES, instituted four criminal complaints under Section 138 of the Negotiable Instruments Act before the Trial Court.`
       },
       {
         heading: "2. The Defense of 'Lost Signed Cheques' Rejected",
         body: `The accused factory proprietor attempted to evade liability by asserting that his signed blank cheques had been misplaced and misused. 
 
-The Trial Court dismissed this standard defense, sentenced the accused to 6 months imprisonment per case, and ordered ₹9 Lakh in total payment. On appeal before the Appellate Sessions Court in 2022, the appellate judge reaffirmed the Trial Court order in its entirety, finding the debtor's appeal devoid of merit.`
+The Trial Court dismissed this standard defense, sentenced the accused to 6 months imprisonment per case, and ordered ₹9 Lakh in total payment. On appeal before the Appellate Sessions Court, the appellate judge reaffirmed the Trial Court order in its entirety, finding the debtor's appeal devoid of merit.`
       },
       {
         heading: "3. Swift Recovery Through Vigorous Court Advocacy",
@@ -128,6 +128,76 @@ The Trial Court dismissed this standard defense, sentenced the accused to 6 mont
     ]
   },
   {
+    slug: "public-title-clearance-notice-jamnagar-revenue-search",
+    title: "Public Legal Notice: 30-Year Search & Property Title Clearance in Jamnagar District",
+    shortTitle: "Public Notice: Property Title Clearance",
+    category: "Landmark Verdicts & Press",
+    newspaper: "Daily Press Publication (Jamnagar)",
+    publishDate: "2026-01-08",
+    readTime: "4 min read",
+    noticeImage: "/assets/notices/public-notice-1.webp",
+    author: {
+      name: "Adv. Gaurav D. Pandya",
+      title: "Managing Principal & Govt. Notary",
+      image: "/assets/team/gaurav-pandya.webp"
+    },
+    excerpt: "Formal newspaper public notice issued by GD PANDYA ASSOCIATES inviting public objections regarding immovable property title clearance in Jamnagar district, demonstrating the statutory process required prior to registered conveyance execution.",
+    metaDescription: "Public legal notice sample and procedure for real estate title search published by GD PANDYA ASSOCIATES in Jamnagar press.",
+    keywords: ["Public notice Jamnagar property", "Title clearance public notice Gujarat", "30 year search report", "Property advertisement Jamnagar", "Advocate notice Gujarat"],
+    content: [
+      {
+        heading: "1. The Statutory Purpose of a Public Legal Notice",
+        body: `Prior to executing a registered sale deed or issuing a formal Title Clearance Certificate for banking mortgage purposes, advocates must publish a Public Notice in leading daily newspapers circulating throughout Jamnagar district.
+
+This notice publicly declares our client's intent to purchase or mortgage the specified parcel, granting 14 calendar days for any third party—such as undisclosed co-sharers, private mortgagees, or decree holders—to lodge documented objections.`
+      },
+      {
+        heading: "2. The Rigor of a 30-Year Revenue Search",
+        body: `Coupled with the public notice, GD PANDYA ASSOCIATES conducts physical inspections of Sub-Registrar Index-II registers, Village Form 7/12, 8-A, and Mutation Entry Form 6 spanning 30 years to guarantee that the title is clear, marketable, and unencumbered.`
+      }
+    ],
+    takeaways: [
+      "Mandatory 14-day newspaper publication protects buyers under bona fide purchaser doctrine.",
+      "Third parties failing to object within the limitation period forfeit customary summary claims.",
+      "Title search covers 30 unbroken years of revenue mutations and registered transfers."
+    ]
+  },
+  {
+    slug: "public-caution-notice-immovable-property-encumbrance",
+    title: "Public Caution Notice: Agricultural & Non-Agricultural (NA) Land Title Scrutiny in Jamnagar",
+    shortTitle: "Public Caution Notice: Land Scrutiny",
+    category: "Landmark Verdicts & Press",
+    newspaper: "Regional Gujarati Press",
+    publishDate: "2026-01-15",
+    readTime: "4 min read",
+    noticeImage: "/assets/notices/public-notice-2.webp",
+    author: {
+      name: "Adv. Gaurav D. Pandya",
+      title: "Managing Principal & Title Counsel",
+      image: "/assets/team/gaurav-pandya.webp"
+    },
+    excerpt: "Official public caution notice regarding land tenure verification, agricultural to NA permissions, and mortgage clearance in Saurashtra region published by GD PANDYA ASSOCIATES.",
+    metaDescription: "Public caution notice and title scrutiny verification in Jamnagar published by GD PANDYA ASSOCIATES. Agricultural and NA land documentation.",
+    keywords: ["Land caution notice Jamnagar", "Agricultural NA land notice", "Jamnagar title search advocate", "Revenue survey scrutiny Saurashtra"],
+    content: [
+      {
+        heading: "1. Preventing Title Defects in Agricultural & Industrial Lands",
+        body: `Transactions involving agricultural parcels transitioning to Non-Agricultural (NA) industrial or residential status entail extensive legal scrutiny under the Gujarat Land Revenue Code and the Gujarat Tenancy and Agricultural Lands Act.
+
+Issuing a formal public notice in daily vernacular newspapers alerts prospective creditors, tenant claimants, and revenue authorities, cementing our client's legal standing.`
+      },
+      {
+        heading: "2. Turnkey Legal Verification by Chambers",
+        body: `Our chambers investigate pending revenue appeals before the Prant Officer, Collector, and Gujarat Revenue Tribunal (GRT), ensuring zero hidden encumbrances prior to final monetary transactions.`
+      }
+    ],
+    takeaways: [
+      "Crucial for both agricultural land and non-agricultural (NA) commercial plots.",
+      "Guarantees compliance with the Gujarat Tenancy Act Section 84-C provisions.",
+      "Protects developers and institutional investors against latent revenue litigation."
+    ]
+  },
+  {
     slug: "property-title-verification-guide-jamnagar",
     title: "The Complete Guide to Property Title Verification & Search Reports in Jamnagar, Gujarat",
     shortTitle: "Property Title Verification in Jamnagar",
@@ -136,7 +206,7 @@ The Trial Court dismissed this standard defense, sentenced the accused to 6 mont
     readTime: "7 min read",
     author: {
       name: "Adv. Gaurav D. Pandya",
-      title: "Principal Advocate & Govt. Notary",
+      title: "Managing Principal & Govt. Notary",
       image: "/assets/team/gaurav-pandya.webp"
     },
     excerpt: "Why a 30-year revenue search report is vital before purchasing agricultural, residential, or commercial property in Jamnagar, Saurashtra, and how title disputes can be prevented.",
@@ -232,7 +302,7 @@ Submitting a well-grounded legal reply backed by judicial precedents from the Hi
     readTime: "8 min read",
     author: {
       name: "Adv. Gaurav D. Pandya",
-      title: "Principal Advocate & Bank Panel Counsel",
+      title: "Managing Principal & Bank Panel Counsel",
       image: "/assets/team/gaurav-pandya.webp"
     },
     excerpt: "Strict legal timelines govern Section 138 Negotiable Instruments Act prosecutions. Missing a single deadline can defeat an otherwise valid financial recovery claim.",

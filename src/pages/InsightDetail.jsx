@@ -19,7 +19,7 @@ export default function InsightDetail() {
     '@type': 'Article',
     headline: article.title,
     description: article.metaDescription,
-    image: 'https://advocate-pandya.com/assets/team/gaurav-pandya-office.webp',
+    image: article.noticeImage ? `https://advocate-pandya.com${article.noticeImage}` : 'https://advocate-pandya.com/assets/team/gaurav-pandya-office.webp',
     datePublished: article.publishDate,
     dateModified: article.publishDate,
     author: {
@@ -30,7 +30,7 @@ export default function InsightDetail() {
     },
     publisher: {
       '@type': 'LegalService',
-      name: 'GD Pandya Associates',
+      name: 'GD PANDYA ASSOCIATES',
       logo: {
         '@type': 'ImageObject',
         url: 'https://advocate-pandya.com/assets/logo.webp',
@@ -46,7 +46,7 @@ export default function InsightDetail() {
   return (
     <>
       <Helmet>
-        <title>{`${article.shortTitle} | GD Pandya Associates, Jamnagar`}</title>
+        <title>{`${article.shortTitle} | GD PANDYA ASSOCIATES, Jamnagar - 361001`}</title>
         <meta name="description" content={article.metaDescription} />
         <meta name="keywords" content={article.keywords.join(', ')} />
         <link rel="canonical" href={`https://advocate-pandya.com/insights/${article.slug}`} />
@@ -54,7 +54,7 @@ export default function InsightDetail() {
         <meta property="og:url" content={`https://advocate-pandya.com/insights/${article.slug}`} />
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={article.metaDescription} />
-        <meta property="og:image" content="https://advocate-pandya.com/assets/team/gaurav-pandya-office.webp" />
+        <meta property="og:image" content={article.noticeImage ? `https://advocate-pandya.com${article.noticeImage}` : 'https://advocate-pandya.com/assets/team/gaurav-pandya-office.webp'} />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">
           {JSON.stringify({
@@ -69,169 +69,164 @@ export default function InsightDetail() {
         </script>
       </Helmet>
 
-      <div className="bg-[#F7FAFC] py-14 sm:py-20 text-[#0E1F33]">
+      <div className="bg-[#F7FAFC] py-16 lg:py-24 text-[#0E1F33]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Back link */}
+          {/* Back button */}
           <div className="mb-8">
             <Link
               to="/insights"
               className="inline-flex items-center text-xs font-semibold text-[#4A5B70] hover:text-[#0E1F33] transition-colors"
             >
-              <ArrowLeft className="w-3.5 h-3.5 mr-1.5" strokeWidth={1.5} />
-              <span>Back to all legal guides</span>
+              <ArrowLeft className="w-4 h-4 mr-1.5" />
+              <span>Back to all legal insights</span>
             </Link>
           </div>
 
           {/* Article Header */}
           <header className="space-y-4 pb-8 border-b border-[rgba(14,31,51,0.10)]">
             <div className="flex flex-wrap items-center gap-2 text-xs">
-              <span className="px-2.5 py-0.5 rounded font-semibold uppercase tracking-wider bg-[#EEF3F8] text-[#A8803A] border border-[rgba(14,31,51,0.08)]">
+              <span className="px-3 py-1 rounded-full font-semibold uppercase tracking-wider text-[#A8803A] bg-[#EEF3F8] border border-[rgba(14,31,51,0.08)]">
                 {article.category}
               </span>
-              <span className="text-[#738499] flex items-center">
-                <Clock className="w-3 h-3 mr-1" strokeWidth={1.5} />
+              {article.newspaper && (
+                <span className="px-3 py-1 rounded-full font-semibold text-[#0E1F33] bg-white border border-[rgba(14,31,51,0.12)]">
+                  {article.newspaper}
+                </span>
+              )}
+              <span className="text-[#738499] flex items-center ml-2">
+                <Clock className="w-3.5 h-3.5 mr-1" />
                 {article.readTime}
               </span>
-              <span className="text-[#738499] flex items-center">
-                <Calendar className="w-3 h-3 mr-1" strokeWidth={1.5} />
-                {article.publishDate}
+              <span className="text-[#738499] flex items-center ml-2">
+                <Calendar className="w-3.5 h-3.5 mr-1" />
+                {new Date(article.publishDate).toLocaleDateString('en-IN', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric'
+                })}
               </span>
             </div>
 
-            <h1 className="font-serif text-3xl sm:text-4xl lg:text-[2.65rem] font-normal text-[#0E1F33] leading-tight tracking-tight">
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#0E1F33] leading-tight tracking-tight">
               {article.title}
             </h1>
 
-            <p className="text-base sm:text-lg text-[#4A5B70] leading-relaxed pt-1">
+            <p className="text-base sm:text-lg text-[#4A5B70] leading-relaxed font-sans pt-1">
               {article.excerpt}
             </p>
 
-            {/* Author row */}
-            <div className="pt-4 flex items-center justify-between border-t border-[rgba(14,31,51,0.06)]">
+            {/* Author Byline */}
+            <div className="pt-4 flex items-center justify-between flex-wrap gap-4 border-t border-[rgba(14,31,51,0.06)]">
               <div className="flex items-center space-x-3">
                 <img
                   src={article.author.image}
                   alt={article.author.name}
-                  className="w-10 h-10 rounded-full object-cover border border-[rgba(14,31,51,0.12)]"
-                  width="40"
-                  height="40"
+                  className="w-10 h-10 rounded-full object-cover object-top border border-[rgba(14,31,51,0.12)]"
                 />
                 <div>
                   <p className="text-xs font-semibold text-[#0E1F33]">{article.author.name}</p>
-                  <p className="text-[11px] text-[#738499]">{article.author.title} · Jamnagar</p>
+                  <p className="text-[11px] text-[#738499]">{article.author.title} · GD PANDYA ASSOCIATES</p>
                 </div>
               </div>
 
-              <a
-                href={`https://wa.me/919898598184?text=Hello%20Advocate%20Pandya%2C%20I%20read%20your%20article%20on%20${encodeURIComponent(article.shortTitle)}%20and%20would%20like%20to%20consult.`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden sm:inline-flex items-center text-xs font-medium text-emerald-800 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200 hover:bg-emerald-100 transition-colors"
-              >
-                <MessageCircle className="w-3.5 h-3.5 mr-1 text-emerald-600" />
-                <span>Ask via WhatsApp</span>
-              </a>
+              <div className="flex items-center space-x-2">
+                <button
+                  onClick={() => {
+                    if (navigator.share) {
+                      navigator.share({
+                        title: article.title,
+                        url: window.location.href,
+                      });
+                    } else {
+                      navigator.clipboard.writeText(window.location.href);
+                      alert('Link copied to clipboard!');
+                    }
+                  }}
+                  className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-[rgba(14,31,51,0.12)] bg-white text-xs text-[#4A5B70] hover:text-[#0E1F33] transition-colors cursor-pointer"
+                >
+                  <Share2 className="w-3.5 h-3.5" />
+                  <span>Share</span>
+                </button>
+              </div>
             </div>
           </header>
 
-          {/* Published Legal Notice / Press Document Viewer (if available) */}
+          {/* Newspaper Scan / Notice Document Viewer */}
           {article.noticeImage && (
-            <div className="my-8 rounded-xl bg-white border border-[rgba(14,31,51,0.12)] p-4 sm:p-6 card-shadow">
-              <div className="flex flex-wrap items-center justify-between pb-3 mb-3 border-b border-[rgba(14,31,51,0.08)] gap-2">
-                <div className="flex items-center space-x-2">
-                  <span className="text-[11px] font-semibold uppercase tracking-wider text-[#A8803A] bg-[#EEF3F8] px-2.5 py-0.5 rounded border border-[rgba(14,31,51,0.08)]">
-                    Official Press Record
-                  </span>
-                  {article.newspaper && (
-                    <span className="text-xs text-[#738499]">{article.newspaper}</span>
-                  )}
-                </div>
-                <a
-                  href={article.noticeImage}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-[#0E1F33] hover:text-[#A8803A] font-medium flex items-center"
-                >
-                  <span>View Original Image</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 ml-1" />
-                </a>
-              </div>
-
-              <div className="rounded-lg overflow-hidden border border-[rgba(14,31,51,0.10)] bg-[#EEF3F8] max-h-[640px] flex items-center justify-center p-2">
+            <div className="my-10 bg-white p-3 rounded-2xl border border-[rgba(14,31,51,0.12)] card-shadow">
+              <div className="rounded-xl overflow-hidden border border-[rgba(14,31,51,0.08)] bg-slate-900">
                 <img
                   src={article.noticeImage}
-                  alt={article.title}
-                  className="w-full h-auto max-h-[620px] object-contain mx-auto rounded shadow-xs"
+                  alt={`Published Press Clipping: ${article.title}`}
+                  className="w-full h-auto object-contain max-h-[600px] mx-auto"
                 />
               </div>
-              <p className="text-[11px] text-center text-[#738499] mt-3">
-                Authentic published legal verdict and press report concerning court proceedings represented by GD Pandya Associates.
+              <p className="text-[11px] text-center text-[#738499] mt-2">
+                Published Press Document &amp; Case Record · GD PANDYA ASSOCIATES, Jamnagar - 361001
               </p>
             </div>
           )}
 
-          {/* Key Takeaways Box */}
-          <div className="my-10 rounded-xl bg-white border border-[rgba(14,31,51,0.12)] p-6 sm:p-7 card-shadow">
-            <h3 className="font-serif text-lg font-semibold text-[#0E1F33] mb-3 flex items-center">
-              <ShieldCheck className="w-5 h-5 mr-2 text-[#A8803A]" strokeWidth={1.5} />
-              Key Legal Takeaways
-            </h3>
-            <ul className="space-y-2.5">
-              {article.takeaways.map((item, idx) => (
-                <li key={idx} className="flex items-start text-xs sm:text-sm text-[#4A5B70] leading-relaxed">
-                  <CheckCircle2 className="w-4 h-4 mr-2 text-emerald-600 shrink-0 mt-0.5" strokeWidth={1.5} />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Article Main Body */}
-          <div className="space-y-10 text-sm sm:text-base text-[#0E1F33] leading-relaxed font-sans">
-            {article.content.map((section, idx) => (
+          {/* Article Body */}
+          <div className="py-8 space-y-8 text-sm sm:text-base text-[#4A5B70] leading-relaxed">
+            {article.content.map((sec, idx) => (
               <section key={idx} className="space-y-3">
-                <h2 className="font-serif text-2xl font-normal text-[#0E1F33] tracking-tight">
-                  {section.heading}
+                <h2 className="font-serif text-2xl sm:text-3xl font-normal text-[#0E1F33]">
+                  {sec.heading}
                 </h2>
-                <div className="text-[#4A5B70] leading-relaxed whitespace-pre-line text-sm sm:text-base">
-                  {section.body}
+                <div className="whitespace-pre-line text-xs sm:text-sm leading-relaxed">
+                  {sec.body}
                 </div>
               </section>
             ))}
           </div>
 
-          {/* Legal Disclaimer Box (BCI Compliant) */}
-          <div className="mt-12 rounded-xl bg-[#EEF3F8] border border-[rgba(14,31,51,0.10)] p-5 text-xs text-[#738499] leading-relaxed">
-            <p className="font-semibold text-[#0E1F33] mb-1">Legal Notice &amp; Disclaimer:</p>
-            <p>
-              This publication is provided strictly for academic and informational purposes under the rules of the Bar Council of India. It does not constitute legal advice, solicitation, or create an advocate-client relationship. Legal outcomes depend on individual case facts. Consult counsel before taking action.
-            </p>
+          {/* Key Legal Takeaways Box */}
+          {article.takeaways && article.takeaways.length > 0 && (
+            <div className="my-10 p-6 sm:p-8 rounded-xl bg-white border border-[rgba(14,31,51,0.12)] card-shadow space-y-4">
+              <div className="flex items-center space-x-2 text-[#0E1F33]">
+                <ShieldCheck className="w-5 h-5 text-[#A8803A]" />
+                <h3 className="font-serif text-xl font-semibold">Key Legal Takeaways</h3>
+              </div>
+              <ul className="space-y-2.5">
+                {article.takeaways.map((item, i) => (
+                  <li key={i} className="flex items-start space-x-3 text-xs sm:text-sm text-[#4A5B70]">
+                    <CheckCircle2 className="w-4 h-4 text-[#A8803A] shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Regulatory Disclaimer */}
+          <div className="p-4 bg-[#EEF3F8] rounded-lg border border-[rgba(14,31,51,0.08)] text-[11px] text-[#738499] leading-relaxed my-8">
+            <strong>Bar Council of India Disclaimer:</strong> The legal insights and court reports presented on this page are published solely for general informational and academic discussion. They do not constitute formal legal opinion or legal advice. Users facing similar matters should obtain independent legal counsel based on the specific facts of their case.
           </div>
 
-          {/* Chamber Action Strip */}
-          <div className="mt-10 rounded-xl bg-white border border-[rgba(14,31,51,0.12)] p-6 sm:p-8 card-shadow flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="space-y-1">
-              <h3 className="font-serif text-xl font-normal text-[#0E1F33]">
-                Have a related case or dispute?
-              </h3>
-              <p className="text-xs sm:text-sm text-[#4A5B70]">
-                Schedule an appointment at our Jamnagar chambers for document review and advisory.
-              </p>
-            </div>
-            <div className="flex items-center space-x-3 shrink-0">
+          {/* Direct Consultation Card */}
+          <div className="mt-12 p-8 rounded-2xl bg-[#0E1F33] text-white space-y-5">
+            <h3 className="font-serif text-2xl sm:text-3xl font-normal">
+              Facing a similar legal matter or court summons?
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed">
+              Consult Advocate Gaurav D. Pandya at <strong>GD PANDYA ASSOCIATES</strong> for a thorough examination of your case documents, title records, or trademark application.
+            </p>
+            <div className="pt-2 flex flex-wrap items-center gap-4">
               <button
                 onClick={openConsultation}
-                className="inline-flex items-center justify-center px-4 py-2.5 text-xs font-semibold text-white bg-[#0E1F33] hover:bg-[#162C47] rounded-lg shadow-sm transition-colors"
+                className="inline-flex items-center justify-center px-5 py-3 bg-[#A8803A] hover:bg-[#8F6C2E] text-white rounded-lg text-xs font-semibold shadow-sm transition-colors cursor-pointer"
               >
-                <span>Book Consultation</span>
+                <span>Schedule Consultation</span>
+                <ArrowUpRight className="w-4 h-4 ml-1" />
               </button>
               <a
                 href={FIRM_DETAILS.social.phone}
-                className="inline-flex items-center justify-center text-xs font-medium text-[#0E1F33] bg-white border border-[rgba(14,31,51,0.12)] px-3 py-2.5 rounded-lg hover:bg-slate-50 transition-colors"
+                className="inline-flex items-center justify-center px-5 py-3 bg-white/10 hover:bg-white/15 text-white rounded-lg text-xs font-semibold border border-white/20 transition-colors"
               >
-                <Phone className="w-3.5 h-3.5 mr-1 text-[#A8803A]" strokeWidth={1.5} />
-                <span>Call Chambers</span>
+                <Phone className="w-4 h-4 mr-2 text-[#A8803A]" />
+                <span>Call Chambers: +91 98985 98184</span>
               </a>
             </div>
           </div>
@@ -241,4 +236,3 @@ export default function InsightDetail() {
     </>
   );
 }
-

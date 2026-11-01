@@ -41,12 +41,12 @@ export default function Navbar({ onOpenConsultation }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo & Brand Identity */}
+          {/* Logo & Brand Identity: GD PANDYA ASSOCIATES CAPITAL */}
           <Link to="/" className="flex items-center space-x-2.5 sm:space-x-3.5 group min-w-0">
             <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-[rgba(14,31,51,0.16)] bg-white p-0.5 shadow-xs group-hover:border-[#A8803A] transition-colors shrink-0">
               <img 
                 src="/assets/logo.webp" 
-                alt="GD Pandya Associates — Law Firm Logo, Jamnagar Gujarat" 
+                alt="GD PANDYA ASSOCIATES — Advocates, Notary &amp; Trademark Attorney, Jamnagar" 
                 className="w-full h-full object-contain"
                 width="40"
                 height="40"
@@ -54,16 +54,12 @@ export default function Navbar({ onOpenConsultation }) {
             </div>
             <div className="min-w-0">
               <div className="flex items-center space-x-1 sm:space-x-1.5 leading-none">
-                <span className="font-serif font-semibold text-base sm:text-xl tracking-tight text-[#0E1F33] truncate">
-                  GD Pandya
-                </span>
-                <span className="text-[#A8803A] font-serif italic text-sm sm:text-base">&amp;</span>
-                <span className="font-serif font-medium text-base sm:text-xl tracking-tight text-[#0E1F33] truncate">
-                  Associates
+                <span className="font-serif font-bold text-base sm:text-xl tracking-tight text-[#0E1F33] truncate">
+                  GD PANDYA ASSOCIATES
                 </span>
               </div>
               <p className="text-[10px] sm:text-[11px] text-[#4A5B70] tracking-wide mt-1 font-normal truncate">
-                Advocates · Trademark Attorney · Notary
+                Advocates · Trademark Attorney · Notary · Jamnagar - 361001
               </p>
             </div>
           </Link>
@@ -87,30 +83,36 @@ export default function Navbar({ onOpenConsultation }) {
             ))}
           </nav>
 
-          {/* Action Buttons */}
-          <div className="hidden sm:flex items-center space-x-4">
+          {/* Desktop Actions */}
+          <div className="hidden lg:flex items-center space-x-4">
             <a
               href={FIRM_DETAILS.social.phone}
-              className="text-xs text-[#4A5B70] hover:text-[#0E1F33] font-medium px-2 py-1.5 transition-colors flex items-center space-x-1"
+              className="inline-flex items-center text-xs font-semibold text-[#0E1F33] hover:text-[#A8803A] transition-colors py-2 px-3 rounded-lg hover:bg-[#EEF3F8]"
             >
-              <Phone className="w-3.5 h-3.5 text-[#A8803A]" strokeWidth={1.5} />
-              <span>Call Us</span>
+              <Phone className="w-3.5 h-3.5 mr-1.5 text-[#A8803A]" strokeWidth={1.5} />
+              <span>+91 98985 98184</span>
             </a>
 
             <button
               onClick={onOpenConsultation}
-              className="inline-flex items-center justify-center px-4 py-2 text-xs font-semibold text-white bg-[#0E1F33] hover:bg-[#162C47] rounded-lg shadow-sm transition-all duration-200 active:scale-[0.98] cursor-pointer"
+              className="inline-flex items-center justify-center px-4 py-2 text-xs font-semibold text-white bg-[#0E1F33] hover:bg-[#162C47] rounded-lg shadow-sm transition-all duration-150 active:scale-98 cursor-pointer"
             >
-              <span>Book a consultation</span>
+              <span>Consultation</span>
               <ArrowUpRight className="w-3.5 h-3.5 ml-1 text-slate-300" strokeWidth={1.5} />
             </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex sm:hidden items-center">
+          <div className="flex items-center lg:hidden space-x-2">
+            <button
+              onClick={onOpenConsultation}
+              className="px-3 py-1.5 text-xs font-semibold text-white bg-[#0E1F33] rounded-lg shadow-xs"
+            >
+              Consult
+            </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 -mr-1 rounded-md text-[#0E1F33] hover:bg-[rgba(14,31,51,0.06)] focus:outline-none"
+              className="p-2 text-[#0E1F33] hover:text-[#A8803A] focus:outline-none rounded-md"
               aria-label="Toggle navigation menu"
             >
               {isOpen ? <X className="w-5 h-5" strokeWidth={1.5} /> : <Menu className="w-5 h-5" strokeWidth={1.5} />}
@@ -146,7 +148,7 @@ export default function Navbar({ onOpenConsultation }) {
                 setIsOpen(false);
                 onOpenConsultation();
               }}
-              className="w-full flex items-center justify-center py-2.5 text-sm font-semibold text-white bg-[#0E1F33] hover:bg-[#162C47] rounded-lg shadow-sm"
+              className="w-full flex items-center justify-center py-2.5 text-sm font-semibold text-white bg-[#0E1F33] hover:bg-[#162C47] rounded-lg shadow-sm cursor-pointer"
             >
               Book a consultation
             </button>
