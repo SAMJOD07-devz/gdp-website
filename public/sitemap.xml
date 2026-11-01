@@ -1,32 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://advocate-pandya.com/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://advocate-pandya.com/assets/team/gaurav-pandya-office.webp</image:loc>
+      <image:title>Advocate Gaurav D. Pandya in Chambers, Jamnagar</image:title>
+      <image:caption>Principal Advocate at GD Pandya Associates, Government of India Notary and Registered Trademark Attorney in Jamnagar, Gujarat</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://advocate-pandya.com/assets/logo.webp</image:loc>
+      <image:title>GD Pandya Associates Law Firm Logo</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://advocate-pandya.com/about</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://advocate-pandya.com/assets/business-card.webp</image:loc>
+      <image:title>Official Notary Verification Card - Advocate Gaurav D. Pandya</image:title>
+      <image:caption>Government of India Notary Registration Card for Advocate Gaurav Dineshchandra Pandya, Jamnagar</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://advocate-pandya.com/practice-areas</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://advocate-pandya.com/team</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://advocate-pandya.com/assets/team/gaurav-pandya.webp</image:loc>
+      <image:title>Adv. Gaurav D. Pandya - Founder &amp; Principal Advocate</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://advocate-pandya.com/assets/team/falguni-pandya.webp</image:loc>
+      <image:title>Adv. Falguni Pandya - Partner &amp; Senior Counsel</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://advocate-pandya.com/assets/team/dhruv-ajudiya.webp</image:loc>
+      <image:title>Adv. Dhruv Ajudiya - Legal Associate (Criminal Litigation)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://advocate-pandya.com/contact</loc>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://advocate-pandya.com/contact</loc>
-    <lastmod>2026-10-29</lastmod>
+    <loc>https://advocate-pandya.com/insights</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://advocate-pandya.com/insights/property-title-verification-guide-jamnagar</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advocate-pandya.com/insights/trademark-registration-process-gujarat</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advocate-pandya.com/insights/cheque-bounce-legal-notice-section-138</loc>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -1,158 +1,159 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Scale, ShieldCheck, Landmark, Home, Users, Briefcase, ArrowRight, Check, Sparkles } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, ChevronDown, Check } from 'lucide-react';
 import { PRACTICE_AREAS } from '../../data/firmData';
 
-const iconMap = {
-  Scale: Scale,
-  ShieldCheck: ShieldCheck,
-  Landmark: Landmark,
-  Home: Home,
-  Users: Users,
-  Briefcase: Briefcase
-};
-
 export default function PracticeAreas({ onOpenConsultation }) {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [expandedId, setExpandedId] = useState(null);
 
-  const filterOptions = [
-    { id: 'all', label: 'All Practice Areas' },
-    { id: 'litigation', label: 'Court Litigation' },
-    { id: 'trademark-ip', label: 'Trademark & IP' },
-    { id: 'banking-finance', label: 'Banking & Debt' },
-    { id: 'property-real-estate', label: 'Real Estate' },
-    { id: 'family-matrimonial', label: 'Family Law' }
-  ];
-
-  const filteredAreas = activeFilter === 'all'
-    ? PRACTICE_AREAS
-    : PRACTICE_AREAS.filter((area) => area.id === activeFilter);
+  const toggleExpand = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
 
   return (
-    <section className="py-16 lg:py-24 bg-navy-950 relative border-b border-slate-800">
-      
-      {/* Subtle background glow */}
-      <div className="absolute top-1/2 right-10 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <section id="practice-areas" className="py-16 sm:py-20 lg:py-28 bg-[#F7FAFC] border-b border-[rgba(14,31,51,0.08)]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
-          <div className="inline-flex items-center space-x-2 text-gold-400 text-xs font-bold uppercase tracking-wider">
-            <Scale className="w-4 h-4" />
-            <span>Core Practice Domains</span>
+        {/* Section Header with Editorial Rhythm */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 pb-6 border-b border-[rgba(14,31,51,0.10)]">
+          <div className="max-w-2xl space-y-2">
+            <p className="text-xs font-semibold tracking-wider uppercase text-[#A8803A]">
+              Areas of Legal Practice
+            </p>
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#0E1F33] tracking-tight">
+              Disciplined counsel across core legal domains.
+            </h2>
           </div>
-          <h2 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight">
-            Comprehensive Legal Services Tailored to Protect Your Interests
-          </h2>
-          <p className="text-sm sm:text-base text-slate-300 font-light">
-            Combining strategic courtroom defense, intellectual property clearance, and institutional advisory across Jamnagar, Rajkot, and the Gujarat High Court.
-          </p>
-        </div>
-
-        {/* Interactive Filter Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
-          {filterOptions.map((f) => (
-            <button
-              key={f.id}
-              onClick={() => setActiveFilter(f.id)}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer ${
-                activeFilter === f.id
-                  ? 'bg-gradient-to-r from-gold-400 to-amber-500 text-slate-950 font-bold shadow-md shadow-gold-500/20 scale-105'
-                  : 'bg-navy-900 text-slate-300 hover:text-white border border-slate-800 hover:border-slate-700'
-              }`}
+          
+          <div className="mt-4 md:mt-0">
+            <Link
+              to="/practice-areas"
+              className="inline-flex items-center text-xs sm:text-sm font-medium text-[#0E1F33] hover:text-[#A8803A] editorial-link transition-colors group"
             >
-              {f.label}
-            </button>
-          ))}
+              <span>Explore all court practice profiles</span>
+              <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" strokeWidth={1.5} />
+            </Link>
+          </div>
         </div>
 
-        {/* 6-Card Grid with AnimatePresence */}
-        <motion.div 
-          layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
-        >
-          <AnimatePresence>
-            {filteredAreas.map((area) => {
-              const IconComponent = iconMap[area.icon] || Scale;
+        {/* Editorial Indexed List (01, 02, 03...) */}
+        <div className="border-t border-[rgba(14,31,51,0.10)]">
+          {PRACTICE_AREAS.map((area, index) => {
+            const indexNumber = String(index + 1).padStart(2, '0');
+            const isExpanded = expandedId === area.id;
 
-              return (
-                <motion.div
-                  layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
-                  key={area.id}
-                  className="group relative rounded-2xl p-6 sm:p-7 bg-navy-900/90 border border-slate-800 hover:border-gold-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-gold-500/10 flex flex-col justify-between"
+            return (
+              <div
+                key={area.id}
+                className="border-b border-[rgba(14,31,51,0.10)] transition-colors duration-200"
+              >
+                <div
+                  onClick={() => toggleExpand(area.id)}
+                  className="py-5 sm:py-8 px-2 sm:px-4 flex flex-col lg:flex-row lg:items-center justify-between gap-3 sm:gap-6 cursor-pointer group hover:bg-[#EEF3F8]/60 transition-colors rounded-sm"
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={isExpanded}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      toggleExpand(area.id);
+                    }
+                  }}
                 >
-                  <div>
-                    {/* Card Header with Icon & Optional Badge */}
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-400/30 flex items-center justify-center text-gold-400 group-hover:bg-gold-500 group-hover:text-slate-950 transition-all duration-300 shadow-inner">
-                        <IconComponent className="w-6 h-6" />
+                  {/* Left: Number + Title + Mobile Chevron */}
+                  <div className="flex items-center justify-between lg:w-5/12">
+                    <div className="flex items-baseline space-x-3 sm:space-x-8">
+                      <span className="font-serif text-xs sm:text-base text-[#738499] font-normal shrink-0">
+                        {indexNumber}
+                      </span>
+                      <div>
+                        <div className="flex items-center space-x-2 sm:space-x-3 flex-wrap">
+                          <h3 className="font-serif text-xl sm:text-[1.75rem] font-normal text-[#0E1F33] group-hover:text-[#0E1F33] transition-colors relative inline-block">
+                            {area.title}
+                            <span className="block h-[1px] bg-[#A8803A] max-w-0 group-hover:max-w-full transition-all duration-300 ease-out" />
+                          </h3>
+                          {area.badge && (
+                            <span className="inline-block px-2 py-0.5 rounded text-[10px] font-medium tracking-wide uppercase bg-[#EEF3F8] text-[#0E1F33] border border-[rgba(14,31,51,0.10)]">
+                              {area.badge}
+                            </span>
+                          )}
+                        </div>
                       </div>
-
-                      {area.badge && (
-                        <span className="text-[10px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full bg-gold-500/15 border border-gold-400/30 text-gold-300">
-                          {area.badge}
-                        </span>
-                      )}
                     </div>
 
-                    {/* Title & Short Description */}
-                    <h3 className="font-display font-bold text-lg sm:text-xl text-white group-hover:text-gold-300 transition-colors mb-2">
-                      {area.title}
-                    </h3>
+                    {/* Mobile toggle button (hidden on desktop) */}
+                    <div className="lg:hidden shrink-0 ml-2">
+                      <div className="w-8 h-8 rounded-full border border-[rgba(14,31,51,0.12)] flex items-center justify-center text-[#0E1F33] group-hover:border-[#A8803A]">
+                        <ChevronDown 
+                          className={`w-3.5 h-3.5 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-[#A8803A]' : ''}`}
+                          strokeWidth={1.5}
+                        />
+                      </div>
+                    </div>
+                  </div>
 
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light mb-4">
+                  {/* Center: Short Summary */}
+                  <div className="lg:w-6/12 pl-6 sm:pl-14 lg:pl-0">
+                    <p className="text-xs sm:text-base text-[#4A5B70] font-sans font-normal leading-relaxed">
                       {area.shortDesc}
                     </p>
-
-                    {/* Key Practice Points */}
-                    <ul className="space-y-1.5 pt-2 border-t border-slate-800/80 mb-6">
-                      {area.points.slice(0, 3).map((point, index) => (
-                        <li key={index} className="flex items-start text-xs text-slate-400">
-                          <Check className="w-3.5 h-3.5 text-gold-400 shrink-0 mr-2 mt-0.5" />
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
 
-                  {/* Card Action Links */}
-                  <div className="pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs">
-                    <Link
-                      to={`/practice-areas#${area.id}`}
-                      className="text-slate-400 hover:text-white font-medium flex items-center group-hover:text-gold-400 transition-colors"
-                    >
-                      <span>Detailed Scope</span>
-                      <ArrowRight className="w-3.5 h-3.5 ml-1" />
-                    </Link>
-
-                    <button
-                      onClick={onOpenConsultation}
-                      className="text-gold-400 hover:text-gold-300 font-semibold underline cursor-pointer"
-                    >
-                      Request Advice
-                    </button>
+                  {/* Desktop toggle button */}
+                  <div className="hidden lg:flex lg:w-1/12 items-center justify-end">
+                    <div className="w-9 h-9 rounded-full border border-[rgba(14,31,51,0.12)] flex items-center justify-center text-[#0E1F33] group-hover:border-[#A8803A] group-hover:text-[#A8803A] transition-colors">
+                      <ChevronDown 
+                        className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-[#A8803A]' : ''}`}
+                        strokeWidth={1.5}
+                      />
+                    </div>
                   </div>
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
-        </motion.div>
+                </div>
 
-        {/* Bottom CTA bar */}
-        <div className="mt-14 text-center">
-          <Link
-            to="/practice-areas"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-slate-900 border border-slate-700 hover:border-gold-400 text-sm font-semibold text-slate-200 hover:text-gold-300 transition-all shadow"
-          >
-            <span>Explore All Practice Areas &amp; Specializations</span>
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </Link>
+                {/* Expanded Details Drawer */}
+                {isExpanded && (
+                  <div className="px-3 sm:px-14 pb-6 pt-2 bg-[#EEF3F8]/40 border-t border-[rgba(14,31,51,0.06)] animate-in fade-in duration-200">
+                    <div className="max-w-3xl space-y-4 pt-2">
+                      <p className="text-xs sm:text-base text-[#0E1F33] leading-relaxed">
+                        {area.fullDesc}
+                      </p>
+
+                      <div className="pt-2">
+                        <p className="text-xs uppercase tracking-wider font-semibold text-[#738499] mb-2.5">
+                          Key Practice Representation
+                        </p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                          {area.points.map((pt, i) => (
+                            <div key={i} className="flex items-start space-x-2 text-xs sm:text-sm text-[#4A5B70]">
+                              <Check className="w-3.5 h-3.5 text-[#A8803A] shrink-0 mt-0.5" strokeWidth={2} />
+                              <span>{pt}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="pt-3 flex flex-wrap items-center gap-3">
+                        <button
+                          onClick={onOpenConsultation}
+                          className="inline-flex items-center text-xs font-semibold px-4 py-2 bg-[#0E1F33] text-white rounded-md hover:bg-[#162C47] transition-colors"
+                        >
+                          <span>Consult on this matter</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 ml-1" strokeWidth={1.5} />
+                        </button>
+                        
+                        <Link
+                          to="/practice-areas"
+                          className="text-xs text-[#4A5B70] hover:text-[#0E1F33] editorial-link"
+                        >
+                          Read full court precedents &rarr;
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
 
       </div>

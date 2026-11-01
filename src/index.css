@@ -1,51 +1,97 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Playfair Display", Georgia, serif;
-  --font-display: "Cinzel", Georgia, serif;
-  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Figtree", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
 
-  --color-gold-400: #fbbf24;
-  --color-gold-500: #d4af37;
-  --color-gold-600: #b89628;
-  --color-navy-950: #050811;
-  --color-navy-900: #0a0f1d;
-  --color-navy-850: #0e1628;
-  --color-navy-800: #131c31;
-  --color-navy-700: #1c2744;
+  /* Editorial Light Palette */
+  --color-mist: #F7FAFC;
+  --color-ice: #EEF3F8;
+  --color-surface: #FFFFFF;
+  
+  --color-navy-950: #081321;
+  --color-navy-900: #0E1F33;
+  --color-navy-800: #162C47;
+  --color-navy-700: #233D5E;
+
+  --color-slate-ink: #0E1F33;
+  --color-slate-body: #4A5B70;
+  --color-slate-muted: #738499;
+
+  --color-brass-400: #C49E58;
+  --color-brass-500: #A8803A;
+  --color-brass-600: #8C6A2E;
+  --color-brass-soft: rgba(168, 128, 58, 0.12);
+
+  --color-hairline: rgba(14, 31, 51, 0.10);
+  --color-hairline-strong: rgba(14, 31, 51, 0.18);
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: #F7FAFC;
+    color: #0E1F33;
+  }
+
+  body {
+    background-color: #F7FAFC;
+    color: #0E1F33;
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    letter-spacing: -0.015em;
+    color: #0E1F33;
   }
 }
 
-.gold-gradient-text {
-  background: linear-gradient(135deg, #fef08a 0%, #d4af37 50%, #b89628 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Subtle editorial transitions & hairline dividers */
+.hairline-border {
+  border-color: rgba(14, 31, 51, 0.10);
 }
 
-.gold-border-gradient {
-  border-image: linear-gradient(to right, #d4af37, #fef08a, #b89628) 1;
+.hairline-b {
+  border-bottom: 1px solid rgba(14, 31, 51, 0.10);
 }
 
-/* Glassmorphism helpers */
-.glass-panel {
-  background: rgba(14, 22, 40, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(212, 175, 55, 0.15);
+.hairline-t {
+  border-top: 1px solid rgba(14, 31, 51, 0.10);
 }
 
-.glass-panel-hover {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+/* Soft layered shadow for cards and modals */
+.card-shadow {
+  box-shadow: 0 1px 3px rgba(14, 31, 51, 0.04), 0 12px 28px -4px rgba(14, 31, 51, 0.06);
 }
 
-.glass-panel-hover:hover {
-  background: rgba(20, 31, 56, 0.85);
-  border-color: rgba(212, 175, 55, 0.4);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(212, 175, 55, 0.2);
+.modal-shadow {
+  box-shadow: 0 4px 6px -1px rgba(14, 31, 51, 0.05), 0 24px 48px -12px rgba(14, 31, 51, 0.16);
+}
+
+/* Brass link underline animation */
+.editorial-link {
+  position: relative;
+  text-decoration: none;
+}
+
+.editorial-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #A8803A;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.editorial-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

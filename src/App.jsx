@@ -6,6 +6,8 @@ import About from './pages/About';
 import PracticeAreasPage from './pages/PracticeAreasPage';
 import Team from './pages/Team';
 import Contact from './pages/Contact';
+import Insights from './pages/Insights';
+import InsightDetail from './pages/InsightDetail';
 
 export default function App() {
   return (
@@ -16,6 +18,8 @@ export default function App() {
           <Route path="about" element={<About />} />
           <Route path="practice-areas" element={<PracticeAreasPage />} />
           <Route path="team" element={<Team />} />
+          <Route path="insights" element={<Insights />} />
+          <Route path="insights/:slug" element={<InsightDetail />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>

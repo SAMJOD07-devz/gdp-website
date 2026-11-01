@@ -2,8 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/assets/logo.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font preloads for above-the-fold performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Hero image preload (LCP optimization) -->
+    <link rel="preload" as="image" href="/assets/team/gaurav-pandya-office.webp" fetchpriority="high" />
     
     <!-- Primary Meta Tags -->
     <title>GD Pandya Associates | Advocates, Legal Consultants & Notary (Govt. of India)</title>
@@ -27,18 +36,17 @@
     <meta property="twitter:description" content="Civil & Criminal Litigation, Trademark Registration, and Govt. Notary services in Jamnagar, Gujarat." />
     <meta property="twitter:image" content="https://advocate-pandya.com/assets/team/gaurav-pandya-office.jpeg" />
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Cormorant Garamond for editorial headings, Plus Jakarta Sans & Figtree for clean UI -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Figtree:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Schema.org Structured Data for Google Local Business & Legal Service -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LegalService",
       "name": "GD Pandya Associates",
-      "image": "https://advocate-pandya.com/assets/logo.png",
+      "image": "https://advocate-pandya.com/assets/logo.webp",
       "@id": "https://advocate-pandya.com",
       "url": "https://advocate-pandya.com",
       "telephone": "+919898598184",
@@ -57,6 +65,34 @@
         "latitude": 22.4712,
         "longitude": 70.0612
       },
+      "areaServed": [
+        { "@type": "City", "name": "Jamnagar" },
+        { "@type": "State", "name": "Gujarat" },
+        { "@type": "Place", "name": "Saurashtra Region" }
+      ],
+      "serviceType": [
+        "Civil Litigation",
+        "Criminal Defense",
+        "Trademark Registration",
+        "Copyright Law",
+        "Cheque Bounce Cases (Section 138 NI Act)",
+        "Property Title Clearance",
+        "Banking and Financial Recovery",
+        "Family and Matrimonial Law",
+        "Notarial Services",
+        "High Court Writ Petitions"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Legal Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Civil & Criminal Litigation Consultation" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Trademark Registration in India" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cheque Bounce (Section 138) Legal Notice" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Property Title Search & Clearance" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Government Notarial Services" } }
+        ]
+      },
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -70,11 +106,14 @@
         "name": "Gaurav D. Pandya",
         "jobTitle": "Principal Advocate, Government Notary & Regd. Trademark Attorney",
         "alumniOf": "Saurashtra University"
-      }
+      },
+      "sameAs": [
+        "https://advocate-pandya.com"
+      ]
     }
     </script>
   </head>
-  <body class="bg-slate-900 text-slate-100 antialiased font-sans selection:bg-amber-500 selection:text-slate-950">
+  <body class="bg-[#F7FAFC] text-[#0E1F33] antialiased font-sans selection:bg-[#0E1F33] selection:text-white">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

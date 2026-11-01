@@ -1,6 +1,7 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useOutletContext } from 'react-router-dom';
-import { Award, GraduationCap, ShieldCheck, Scale, Landmark, Calendar, Phone, CheckCircle2 } from 'lucide-react';
+import { Award, GraduationCap, ShieldCheck, Scale, Landmark, Phone, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { FIRM_DETAILS, STATS } from '../data/firmData';
 
 export default function About() {
@@ -13,110 +14,160 @@ export default function About() {
     },
     {
       title: "Appointed Government of India Notary",
-      desc: "Authorized by the Union Ministry of Law & Justice for affidavits, document attestations, and statutory certifications."
+      desc: "Authorized by the Union Ministry of Law & Justice for affidavits, statutory certifications, and legal document attestations."
     },
     {
       title: "Registered Trade Mark & Copyright Attorney",
-      desc: "Accredited with the Controller General of Patents, Designs and Trade Marks (CGPDTM), Govt. of India."
+      desc: "Accredited with the Controller General of Patents, Designs and Trade Marks (CGPDTM), Government of India."
     },
     {
       title: "Member, Jamnagar Bar Association",
-      desc: "Active contributor and respected member of the Bar fraternity, upholding the highest standards of legal ethics."
+      desc: "Active and respected contributor to the bar fraternity, committed to the highest standards of professional ethics."
     },
     {
-      title: "Legal Panel Counsel for Public Bodies & Banks",
-      desc: "Empanelled with Gujarat Ayurved University, Gujarat Water Board, Central Bank of India, and Union Bank of India."
+      title: "Panel Counsel for Public Bodies & Nationalized Banks",
+      desc: "Empanelled with Central Bank of India, Union Bank of India, Gujarat Ayurved University, and Gujarat Water Board."
     }
   ];
 
   return (
-    <div className="bg-navy-950 py-12 lg:py-20 text-slate-100">
+    <>
+      <Helmet>
+        <title>About Advocate Gaurav D. Pandya | GD Pandya Associates, Jamnagar</title>
+        <meta name="description" content="Learn about Advocate Gaurav D. Pandya — B.Com, L.L.B., DLLP (Saurashtra University), Government of India Notary & Registered Trademark Attorney. 18+ years at Gujarat High Court & District Court Jamnagar." />
+        <link rel="canonical" href="https://advocate-pandya.com/about" />
+        <meta property="og:type" content="profile" />
+        <meta property="og:url" content="https://advocate-pandya.com/about" />
+        <meta property="og:title" content="About Advocate Gaurav D. Pandya | GD Pandya Associates" />
+        <meta property="og:description" content="18+ years of legal mastery. Government Notary, Registered Trademark Attorney, Panel Counsel for nationalized banks. Jamnagar, Gujarat." />
+        <meta property="og:image" content="https://advocate-pandya.com/assets/team/gaurav-pandya-office.webp" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://advocate-pandya.com/" },
+            { "@type": "ListItem", "position": 2, "name": "About the Firm", "item": "https://advocate-pandya.com/about" }
+          ]
+        })}</script>
+      </Helmet>
+    <div className="bg-[#F7FAFC] py-16 lg:py-24 text-[#0E1F33]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Page Header */}
-        <div className="max-w-3xl mb-14 space-y-3">
-          <div className="inline-flex items-center space-x-2 text-gold-400 text-xs font-bold uppercase tracking-wider">
-            <Award className="w-4 h-4" />
-            <span>Firm Profile &amp; Founder Heritage</span>
-          </div>
-          <h1 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight">
+        <div className="max-w-3xl mb-16 space-y-3 pb-8 border-b border-[rgba(14,31,51,0.10)]">
+          <p className="text-xs font-semibold tracking-wider uppercase text-[#A8803A]">
+            Firm Profile &amp; Founder Heritage
+          </p>
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#0E1F33] tracking-tight">
             Advocate Gaurav D. Pandya &amp; Associates
           </h1>
-          <p className="text-base sm:text-lg text-slate-300 font-light leading-relaxed">
+          <p className="text-base sm:text-lg text-[#4A5B70] leading-relaxed">
             Delivering uncompromised legal representation, intellectual property expertise, and notary services rooted in integrity, depth of jurisprudence, and unwavering client advocacy.
           </p>
         </div>
 
         {/* Founder Spotlight: 2-Column Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-20">
           
-          {/* Left Column: Office Photograph with Certificates & Bio Card */}
+          {/* Left Column: Office Photograph & Visiting Card */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="rounded-2xl overflow-hidden border-2 border-gold-500/40 bg-navy-900 shadow-2xl">
-              <img
-                src="/assets/team/gaurav-pandya-office.jpeg"
-                alt="Advocate Gaurav D. Pandya in Jamnagar Office with Saurashtra University Certificates"
-                className="w-full h-auto object-cover"
-              />
-              <div className="p-4 bg-navy-900 border-t border-slate-800 text-center">
-                <h3 className="font-display font-bold text-white text-lg">
-                  Adv. Gaurav Dineshchandra Pandya
-                </h3>
-                <p className="text-xs text-gold-400 font-semibold mt-0.5">
-                  B.Com, L.L.B., DLLP (Shah Law College / Saurashtra Univ.)
+            <div className="rounded-xl overflow-hidden border border-[rgba(14,31,51,0.12)] bg-white card-shadow p-3">
+              <div className="rounded-lg overflow-hidden aspect-[4/5] bg-[#EEF3F8]">
+                <img
+                  src="/assets/team/gaurav-pandya-office.webp"
+                  alt="Advocate Gaurav D. Pandya in his Jamnagar office chambers with Saurashtra University law degree certificates — Principal Advocate, GD Pandya Associates"
+                  className="w-full h-full object-cover object-top"
+                  loading="lazy"
+                  width="900"
+                  height="1200"
+                />
+              </div>
+              <div className="pt-3 px-1 text-center">
+                <p className="text-xs font-medium text-[#0E1F33]">
+                  Advocate Gaurav D. Pandya in Chambers
                 </p>
-                <p className="text-[11px] text-slate-400 mt-1">
-                  Founder · Government of India Notary · Regd. Trademark Attorney
+                <p className="text-[11px] text-[#738499]">
+                  Madhav Square Chambers, Jamnagar
                 </p>
               </div>
             </div>
 
-            {/* Visiting Card Reference */}
-            <div className="rounded-xl overflow-hidden border border-slate-800 bg-navy-900 p-2 shadow">
+            {/* Official Visiting Card Document Record */}
+            <div className="rounded-xl overflow-hidden border border-[rgba(14,31,51,0.12)] bg-white card-shadow p-3">
               <img
-                src="/assets/business-card.jpeg"
-                alt="Advocate Gaurav Pandya Notary Visiting Card"
-                className="w-full h-auto rounded-lg"
+                src="/assets/business-card.webp"
+                alt="Government of India Notary Registration Visiting Card - Advocate Gaurav D. Pandya, Jamnagar"
+                className="w-full h-auto rounded-lg border border-[rgba(14,31,51,0.06)]"
+                loading="lazy"
+                width="800"
+                height="496"
               />
+              <p className="text-[11px] text-center text-[#738499] mt-2">
+                Official Government of India Notary Registration Card
+              </p>
             </div>
           </div>
 
-          {/* Right Column: Educational Background & Detailed Journey */}
-          <div className="lg:col-span-7 space-y-6">
-            
-            <div className="space-y-4 text-sm sm:text-base text-slate-300 leading-relaxed font-light">
-              <h2 className="font-display font-bold text-2xl text-white">
-                Educational Foundation &amp; Jurisprudential Legacy
+          {/* Right Column: Bio & Qualifications */}
+          <div className="lg:col-span-7 space-y-8">
+            <div>
+              <p className="text-xs font-semibold tracking-wider uppercase text-[#A8803A]">
+                Founding Counsel
+              </p>
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-[#0E1F33] mt-1">
+                Gaurav Dineshandra Pandya
               </h2>
-              <p>
-                Advocate Gaurav D. Pandya completed his higher legal education from the prestigious <strong>Shah Law College, Jamnagar</strong>, affiliated with <strong>Saurashtra University</strong>, earning degrees in <strong>Commerce (B.Com)</strong>, <strong>Law (L.L.B.)</strong>, and an advanced <strong>Diploma in Labour Laws and Practice (DLLP)</strong>.
+              <p className="text-sm font-medium text-[#4A5B70] mt-1">
+                B.Com, L.L.B., DLLP · Govt. of India Notary · Regd. Trade Mark Attorney
               </p>
-              <p>
-                This multi-disciplinary academic background—uniting commercial finance, corporate structures, and statutory labor laws—provides the firm with a unique advantage in handling complex commercial disputes, corporate negotiations, and property title litigations.
-              </p>
-              <p>
-                Enrolled with the <strong>Bar Council of Gujarat in 2007</strong>, Adv. Pandya has continually built a distinguished litigation track record before the District &amp; Sessions Courts of Jamnagar, Devbhoomi Dwarka, Rajkot, and appellate proceedings before the High Court of Gujarat.
+              <p className="text-xs text-[#738499] mt-0.5">
+                Bar Council of Gujarat Enrolment: 2007 · Jamnagar Bar Association
               </p>
             </div>
 
-            {/* Credentials Accordion/List */}
-            <div className="pt-4 border-t border-slate-800 space-y-3">
-              <h3 className="font-display font-bold text-lg text-white">
-                Key Professional Accreditations
-              </h3>
+            {/* Education Box */}
+            <div className="p-6 rounded-xl bg-white border border-[rgba(14,31,51,0.10)] card-shadow space-y-3">
+              <div className="flex items-center space-x-2 text-[#0E1F33] font-semibold text-sm">
+                <GraduationCap className="w-4 h-4 text-[#A8803A]" strokeWidth={1.5} />
+                <span>Academic &amp; Jurisprudential Background</span>
+              </div>
+              <p className="text-xs sm:text-sm text-[#4A5B70] leading-relaxed">
+                Advocate Gaurav Pandya completed his Bachelor of Commerce (B.Com), Bachelor of Laws (L.L.B.), and specialized Post-Graduate Diploma in Labour Laws &amp; Practice (DLLP) from the esteemed <strong>Shah Law College, Saurashtra University</strong>.
+              </p>
+              <p className="text-xs text-[#738499] leading-relaxed">
+                His multidisciplinary training provides a unique dual perspective: acute commercial discernment alongside mastery over civil procedural codes, criminal jurisprudence, and statutory property laws.
+              </p>
+            </div>
 
-              <div className="space-y-2.5">
+            {/* Narrative Paragraphs */}
+            <div className="space-y-4 text-sm sm:text-base text-[#4A5B70] leading-relaxed">
+              <p>
+                Since commencing independent practice in 2007, Advocate Gaurav Pandya has appeared in hundreds of contentious disputes before the Courts of Jamnagar, the Sessions Court, and the High Court of Gujarat. His courtroom hallmark is rigorous legal research, uncompromising preparation of documentary evidence, and persuasive oral advocacy.
+              </p>
+              <p>
+                Recognized by the Ministry of Law and Justice, Government of India, as an authorized Notary, he oversees official verifications, oaths, and authentications. Concurrently, his appointment as a Registered Trade Mark Attorney has established the firm as a regional hub for intellectual property filings, trademark portfolio management, and objection hearings.
+              </p>
+            </div>
+
+            {/* Accreditation List */}
+            <div className="pt-2 space-y-3">
+              <h3 className="font-serif text-xl font-normal text-[#0E1F33]">
+                Professional Standing &amp; Accreditations
+              </h3>
+              <div className="space-y-3">
                 {credentialsList.map((item, idx) => (
-                  <div
+                  <div 
                     key={idx}
-                    className="p-3.5 rounded-xl bg-navy-900/90 border border-slate-800/80 flex items-start space-x-3"
+                    className="p-4 rounded-lg bg-white border border-[rgba(14,31,51,0.08)] card-shadow flex items-start space-x-3.5"
                   >
-                    <CheckCircle2 className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
+                    <div className="w-7 h-7 rounded-full bg-[#EEF3F8] flex items-center justify-center text-[#A8803A] shrink-0 mt-0.5">
+                      <ShieldCheck className="w-4 h-4" strokeWidth={1.5} />
+                    </div>
                     <div>
-                      <h4 className="font-semibold text-white text-sm">
+                      <h4 className="text-sm font-semibold text-[#0E1F33]">
                         {item.title}
                       </h4>
-                      <p className="text-xs text-slate-300 mt-0.5 leading-relaxed font-light">
+                      <p className="text-xs text-[#4A5B70] mt-0.5 leading-relaxed">
                         {item.desc}
                       </p>
                     </div>
@@ -125,20 +176,20 @@ export default function About() {
               </div>
             </div>
 
-            {/* Action Bar */}
-            <div className="pt-4 flex flex-wrap gap-4">
+            {/* CTA */}
+            <div className="pt-4 flex items-center space-x-4">
               <button
                 onClick={openConsultation}
-                className="px-6 py-3 bg-gradient-to-r from-gold-400 to-amber-500 hover:from-gold-300 hover:to-amber-400 text-slate-950 font-semibold text-sm rounded-lg shadow-lg cursor-pointer"
+                className="inline-flex items-center justify-center px-6 py-3 text-xs font-semibold text-white bg-[#0E1F33] hover:bg-[#162C47] rounded-lg shadow-sm transition-colors"
               >
-                Schedule Consultation
+                <span>Schedule Consultation</span>
+                <ArrowUpRight className="w-3.5 h-3.5 ml-1.5" strokeWidth={1.5} />
               </button>
               <a
                 href={FIRM_DETAILS.social.phone}
-                className="inline-flex items-center px-5 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-medium rounded-lg border border-slate-700"
+                className="text-xs font-medium text-[#0E1F33] hover:text-[#A8803A] editorial-link"
               >
-                <Phone className="w-4 h-4 mr-2 text-gold-400" />
-                <span>Call {FIRM_DETAILS.phone}</span>
+                Direct Call: +91 98985 98184
               </a>
             </div>
 
@@ -146,52 +197,8 @@ export default function About() {
 
         </div>
 
-        {/* Firm Ethos & Commitments */}
-        <div className="rounded-2xl bg-navy-900 border border-slate-800 p-8 lg:p-12">
-          <div className="max-w-3xl mx-auto text-center mb-10 space-y-2">
-            <h2 className="font-display font-bold text-2xl sm:text-3xl text-white">
-              The Guiding Pillars of GD Pandya Associates
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-400">
-              Upholding time-tested values of the Indian legal profession.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center space-y-3 p-5 rounded-xl bg-navy-950/70 border border-slate-800">
-              <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-400/30 flex items-center justify-center text-gold-400 mx-auto">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <h3 className="font-display font-bold text-base text-white">Absolute Confidentiality</h3>
-              <p className="text-xs text-slate-300 leading-relaxed font-light">
-                Every consultation, document, and corporate strategy is protected by strict statutory advocate-client privilege.
-              </p>
-            </div>
-
-            <div className="text-center space-y-3 p-5 rounded-xl bg-navy-950/70 border border-slate-800">
-              <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-400/30 flex items-center justify-center text-gold-400 mx-auto">
-                <Scale className="w-6 h-6" />
-              </div>
-              <h3 className="font-display font-bold text-base text-white">Rigorous Trial Preparation</h3>
-              <p className="text-xs text-slate-300 leading-relaxed font-light">
-                We believe trials are won in preparation. Every precedent is researched and every piece of evidence cross-verified.
-              </p>
-            </div>
-
-            <div className="text-center space-y-3 p-5 rounded-xl bg-navy-950/70 border border-slate-800">
-              <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-400/30 flex items-center justify-center text-gold-400 mx-auto">
-                <Landmark className="w-6 h-6" />
-              </div>
-              <h3 className="font-display font-bold text-base text-white">Transparent Counsel</h3>
-              <p className="text-xs text-slate-300 leading-relaxed font-light">
-                We provide pragmatic assessments of merits, potential costs, and expected timelines without misleading promises.
-              </p>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
+    </>
   );
 }
-

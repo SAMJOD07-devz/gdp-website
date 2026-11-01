@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Scale, ShieldAlert, Check } from 'lucide-react';
+import { Scale, Check } from 'lucide-react';
 
 export default function DisclaimerModal({ forceOpen, onCloseForce }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,57 +30,57 @@ export default function DisclaimerModal({ forceOpen, onCloseForce }) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="disclaimer-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/85 backdrop-blur-md animate-in fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[rgba(14,31,51,0.45)] backdrop-blur-xs animate-in fade-in duration-200"
     >
-      <div className="relative w-full max-w-2xl bg-navy-900 border border-gold-500/30 rounded-2xl p-6 sm:p-8 shadow-2xl text-slate-200">
+      <div className="relative w-full max-w-xl bg-white border border-[rgba(14,31,51,0.12)] rounded-2xl p-5 sm:p-8 modal-shadow text-[#0E1F33] animate-in zoom-in-95 duration-200 max-h-[90vh] overflow-y-auto">
         
         {/* Header */}
-        <div className="flex items-center space-x-3 mb-5 border-b border-slate-800 pb-4">
-          <div className="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-400/40 flex items-center justify-center text-gold-400 shrink-0">
-            <Scale className="w-5 h-5" />
+        <div className="flex items-center space-x-3 mb-4 sm:mb-5 border-b border-[rgba(14,31,51,0.08)] pb-3 sm:pb-4">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#EEF3F8] border border-[rgba(14,31,51,0.10)] flex items-center justify-center text-[#A8803A] shrink-0">
+            <Scale className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={1.5} />
           </div>
           <div>
-            <h2 id="disclaimer-title" className="font-display font-bold text-white text-lg sm:text-xl">
-              Bar Council of India Disclaimer
+            <h2 id="disclaimer-title" className="font-serif font-semibold text-[#0E1F33] text-base sm:text-xl">
+              Bar Council of India Compliance
             </h2>
-            <p className="text-xs text-gold-400 font-medium">
-              Compliance with Rules of Bar Council of India
+            <p className="text-[11px] sm:text-xs text-[#738499]">
+              Regulatory statement under the Advocates Act, 1961
             </p>
           </div>
         </div>
 
         {/* Content */}
-        <div className="space-y-3.5 text-xs sm:text-sm text-slate-300 leading-relaxed max-h-[60vh] overflow-y-auto pr-2">
+        <div className="space-y-3 text-xs sm:text-sm text-[#4A5B70] leading-relaxed max-h-[50vh] overflow-y-auto pr-1">
           <p>
-            As per the rules of the <strong>Bar Council of India</strong>, advocates and law firms in India are not permitted to solicit work or advertise in any form or manner.
+            Under the rules established by the <strong>Bar Council of India</strong>, advocates and law firms are strictly prohibited from soliciting work or advertising in any form or medium.
           </p>
           <p>
-            By clicking <strong>&quot;I Agree&quot;</strong> and proceeding to browse this website, you acknowledge and confirm that:
+            By clicking <strong>&quot;I Understand &amp; Agree&quot;</strong> and accessing this website, you confirm the following:
           </p>
-          <ul className="list-disc list-inside space-y-2 pl-2 text-slate-300 text-xs">
+          <ul className="list-disc list-inside space-y-1.5 pl-1 text-[11px] sm:text-xs text-[#4A5B70]">
             <li>
-              You are accessing information about <strong>GD Pandya Associates</strong> of your own accord and without any inducement, solicitation, or advertisement by the firm or its advocates.
+              You are accessing information regarding <strong>GD Pandya &amp; Associates</strong> entirely of your own volition without any solicitation, advertisement, or inducement.
             </li>
             <li>
-              The materials provided on this website are exclusively intended for informational purposes and should not be construed as legal advice or formal consultation.
+              The materials and case outlines on this site are solely for general informational purposes and do not constitute formal legal counsel or advice.
             </li>
             <li>
-              The transmission or receipt of information through this website does not create any advocate-client relationship between GD Pandya Associates and the visitor.
+              Viewing this website, downloading information, or submitting an inquiry does not establish an advocate-client relationship.
             </li>
             <li>
-              GD Pandya Associates shall not be held liable for any action taken by the user relying on material or information provided on this platform.
+              GD Pandya &amp; Associates accepts no liability for any reliance placed on the information provided on this platform without formal legal consultation.
             </li>
           </ul>
         </div>
 
         {/* Action Button */}
-        <div className="mt-6 pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-end space-y-2 sm:space-y-0 sm:space-x-3">
+        <div className="mt-5 sm:mt-6 pt-3 sm:pt-4 border-t border-[rgba(14,31,51,0.08)] flex justify-end">
           <button
             onClick={handleAgree}
-            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-2.5 bg-gradient-to-r from-gold-400 to-amber-500 hover:from-gold-300 hover:to-amber-400 text-slate-950 font-semibold text-sm rounded-lg shadow-lg shadow-gold-500/20 active:scale-95 transition-all cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-2.5 bg-[#0E1F33] hover:bg-[#162C47] text-white font-semibold rounded-lg text-xs shadow-sm transition-all duration-150 cursor-pointer"
           >
-            <Check className="w-4 h-4 mr-1.5" />
-            <span>I Agree &amp; Proceed</span>
+            <Check className="w-4 h-4 mr-1.5 text-slate-300" strokeWidth={2} />
+            <span>I Understand &amp; Agree</span>
           </button>
         </div>
 
@@ -88,4 +88,3 @@ export default function DisclaimerModal({ forceOpen, onCloseForce }) {
     </div>
   );
 }
-

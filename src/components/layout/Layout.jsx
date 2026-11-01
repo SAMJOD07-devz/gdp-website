@@ -13,7 +13,7 @@ export default function Layout() {
   const [forceDisclaimerOpen, setForceDisclaimerOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col bg-navy-950 text-slate-100 font-sans selection:bg-amber-500 selection:text-slate-950">
+    <div className="min-h-screen flex flex-col bg-[#F7FAFC] text-[#0E1F33] font-sans selection:bg-[#0E1F33] selection:text-white">
       <ScrollToTop />
       
       {/* Top Bar for Desktop */}
@@ -22,8 +22,8 @@ export default function Layout() {
       {/* Sticky Main Navigation */}
       <Navbar onOpenConsultation={() => setIsConsultationOpen(true)} />
 
-      {/* Page Content */}
-      <main className="flex-grow">
+      {/* Page Content with bottom offset for mobile sticky quick-bar */}
+      <main className="flex-grow pb-16 sm:pb-0">
         <Outlet context={{ openConsultation: () => setIsConsultationOpen(true) }} />
       </main>
 
